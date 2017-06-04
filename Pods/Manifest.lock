@@ -14,13 +14,22 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - JSONModel (1.7.0)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - JSONModel (~> 1.7.0)
+  - Masonry (~> 1.0.2)
+  - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: af0e13d117d14e017532ca0b291239277aff9914
+PODFILE CHECKSUM: 12e37d2eac249024cdd4cea30650243723c437dc
 
 COCOAPODS: 1.2.0
