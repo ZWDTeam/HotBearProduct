@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 3,
+          "height" : 8
+        },
+        "cap-insets" : {
+          "bottom" : 23,
+          "top" : 22,
+          "right" : 9,
+          "left" : 15
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "navigationBarBackColor.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

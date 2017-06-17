@@ -84,6 +84,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "SMSSDK/SMSSDKUI.bundle"
   install_resource "WeiboSDK/libWeiboSDK/WeiboSDK.bundle"
 fi
+if [[ "$CONFIGURATION" == "ad hoc distribution" ]]; then
+  install_resource "SMSSDK/SMSSDKUI.bundle"
+  install_resource "WeiboSDK/libWeiboSDK/WeiboSDK.bundle"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
