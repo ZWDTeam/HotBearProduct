@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iUL-pg-1TB" customClass="SSInputVideoAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="378"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imJ-Sv-7Os">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="378"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOo-2C-aG5">
+                    <rect key="frame" x="180" y="291" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="3eT-1g-gEU"/>
+                        <constraint firstAttribute="height" constant="60" id="ffe-v6-0jW"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                    <state key="normal" image="Checkmark">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="finishAction:" destination="iUL-pg-1TB" eventType="touchUpInside" id="KMB-JZ-TXQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kI-VL-uM6">
+                    <rect key="frame" x="40" y="291" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Fvn-Cn-jiY"/>
+                        <constraint firstAttribute="height" constant="60" id="NbS-8L-iJS"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="19" minY="19" maxX="19" maxY="19"/>
+                    <state key="normal" image="失败">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelAction:" destination="iUL-pg-1TB" eventType="touchUpInside" id="xzr-ng-O2r"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="8kI-VL-uM6" firstAttribute="leading" secondItem="iUL-pg-1TB" secondAttribute="leading" constant="40" id="1me-tM-PVU"/>
+                <constraint firstAttribute="bottom" secondItem="imJ-Sv-7Os" secondAttribute="bottom" id="6cS-34-esM"/>
+                <constraint firstItem="imJ-Sv-7Os" firstAttribute="top" secondItem="iUL-pg-1TB" secondAttribute="top" id="Emr-gU-zZM"/>
+                <constraint firstAttribute="bottom" secondItem="NOo-2C-aG5" secondAttribute="bottom" constant="27" id="GSU-bK-RJw"/>
+                <constraint firstAttribute="trailing" secondItem="imJ-Sv-7Os" secondAttribute="trailing" id="X5g-0X-ba6"/>
+                <constraint firstItem="imJ-Sv-7Os" firstAttribute="leading" secondItem="iUL-pg-1TB" secondAttribute="leading" id="XDO-QC-lvs"/>
+                <constraint firstAttribute="trailing" secondItem="NOo-2C-aG5" secondAttribute="trailing" constant="40" id="dr7-fD-e5V"/>
+                <constraint firstAttribute="bottom" secondItem="8kI-VL-uM6" secondAttribute="bottom" constant="27" id="mQJ-ve-EBz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancelBtn" destination="8kI-VL-uM6" id="7JL-DN-wKe"/>
+                <outlet property="finishBtn" destination="NOo-2C-aG5" id="vk0-fo-V4T"/>
+                <outlet property="playerView" destination="imJ-Sv-7Os" id="CiC-jH-bmw"/>
+            </connections>
+            <point key="canvasLocation" x="-20" y="208"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Checkmark" width="37" height="37"/>
+        <image name="失败" width="37" height="37"/>
+    </resources>
+</document>

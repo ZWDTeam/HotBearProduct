@@ -1,0 +1,86 @@
+//
+//  NeardyPrefixHeader.pch
+//  HotBearProduct
+//
+//  Created by Cody on 2017/6/18.
+//  Copyright © 2017年 hotBear. All rights reserved.
+//
+
+#ifndef NeardyPrefixHeader_pch
+#define NeardyPrefixHeader_pch
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "HBDocumentManager.h"
+//
+//屏幕高度
+#define HB_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define HB_SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+//
+#import "SSHTTPSRequest.h"
+#import <Masonry.h>
+#import "IQKeyboardManager.h"
+#import "MBProgressHUD.h"
+#import "HBLoginViewController.h"
+#import <JSONModel.h>
+#import "HBAccountInfo.h"//当前登录用户信息
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "UIView+Badge.h"
+//
+#import "UMMobClick/MobClick.h"//友盟统计
+#import "NSString+URL.h"
+#import "SSHTTPUploadManager.h"
+#import "HBDocumentManager.h"
+
+#if 0
+
+#define HB_SERVER_IP @"http://172.18.1.159:8080/hotbear/"
+
+#else
+
+#define HB_SERVER_IP @"https://www.hotbearvideo.com/hotbear/"
+
+#endif
+
+//APP 基准黑色值
+#define HB_MAIN_COLOR [UIColor colorWithRed:73.0f/255.0f green:73.0f/255.0f blue:73.0f/255.0f alpha:1]
+//浅绿
+#define HB_MAIN_GREEN_COLOR [UIColor colorWithRed:9.0f/255.0f green:192.0f/255.0f blue:6.0f/255.0f alpha:1]
+//深绿
+#define HB_MAIN_DARK_GREEN_COLOR [UIColor colorWithRed:55.0f/255.0f green:148.0f/255.0f blue:67.0f/255.0f alpha:1]
+//橙色
+#define HB_MAIN_ORANGE_COLOR  [UIColor colorWithRed:244.0f/255.0f green:109.0f/255.0f blue:107.0f/255.0f alpha:1.0]
+
+//提现汇率
+#define withdraw_exchange_rate  0.07
+
+//熊币转换熊掌汇率
+#define hotCoin_exchange_rate 7
+
+//默认用户头像
+#define DEFAULT_HEADER_IMAGE [UIImage imageNamed:@"默认头像"]
+
+//默认免费观看视频时长
+#define DEFAULT_FREE_VIDEO_DURATION 8
+
+//新浪微博授权回调页
+#define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
+
+//分享标题文字
+#define HBShareTitle @"分享自能赚钱的短视频社区"
+#define HBSHareDetailTitle @"宅男福利小视频，新交友约会神器"
+
+//返回适应的比例尺寸大小
+#define HBSizeMake(w , h)  CGSizeMake(w , h*(HB_SCREEN_WIDTH/320))
+
+//去除发布颁发打印日志
+#ifndef DEBUG
+#undef NSLog
+#define NSLog(args, ...)
+#endif
+
+#endif /* NeardyPrefixHeader_pch */

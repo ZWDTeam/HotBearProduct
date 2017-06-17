@@ -415,7 +415,28 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     else if (mode == MBProgressHUDModeText) {
         [indicator removeFromSuperview];
         indicator = nil;
+    }else if (mode == MBProgressHUDModeSucceed && self.customView != indicator){
+        
+        UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.customView = [[UIImageView alloc] initWithImage:image];
+        // Update custom view indicator
+        [indicator removeFromSuperview];
+        indicator = self.customView;
+        [self.bezelView addSubview:indicator];
+
+        
+    }else if (mode == MBProgressHUDModeFail && self.customView != indicator){
+        UIImage *image = [[UIImage imageNamed:@"失败"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.customView = [[UIImageView alloc] initWithImage:image];
+        // Update custom view indicator
+        [indicator removeFromSuperview];
+        indicator = self.customView;
+        [self.bezelView addSubview:indicator];
+
     }
+    
+    
+    
     indicator.translatesAutoresizingMaskIntoConstraints = NO;
     self.indicator = indicator;
 
@@ -784,7 +805,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (void)updateForCurrentOrientationAnimated:(BOOL)animated {
     // Stay in sync with the superview in any case
     if (self.superview) {
-        self.bounds = self.superview.bounds;
+        self.frame = self.superview.bounds;
     }
 
     // Not needed on iOS 8+, compile out when the deployment target allows,

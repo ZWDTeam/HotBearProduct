@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HBPayCoinAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="熊掌充值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlT-CK-hYu">
+                    <rect key="frame" x="95.5" y="20" width="70" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="FXg-zq-FO7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynm-kf-rsb">
+                    <rect key="frame" x="0.0" y="49" width="260" height="1"/>
+                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="vwy-vJ-Ahg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0wy-pa-1ye">
+                    <rect key="frame" x="0.0" y="50" width="260" height="220"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="PJa-Ys-TJe"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Hem-fX-ycf"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rga-GV-qLZ">
+                    <rect key="frame" x="220" y="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="失败"/>
+                    <connections>
+                        <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="THe-lu-xgF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0wy-pa-1ye" secondAttribute="trailing" id="8bN-vJ-XD5"/>
+                <constraint firstItem="Ynm-kf-rsb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BFN-Kv-LuS"/>
+                <constraint firstItem="0wy-pa-1ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BIY-A9-6ZY"/>
+                <constraint firstAttribute="bottom" secondItem="0wy-pa-1ye" secondAttribute="bottom" id="IAu-1N-rdw"/>
+                <constraint firstItem="XlT-CK-hYu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MfN-VB-Vf0"/>
+                <constraint firstItem="0wy-pa-1ye" firstAttribute="top" secondItem="Ynm-kf-rsb" secondAttribute="bottom" id="NCe-DH-3G0"/>
+                <constraint firstItem="Ynm-kf-rsb" firstAttribute="top" secondItem="XlT-CK-hYu" secondAttribute="bottom" constant="8" id="XgY-dm-luu"/>
+                <constraint firstItem="XlT-CK-hYu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="gA3-7p-El1"/>
+                <constraint firstAttribute="trailing" secondItem="Ynm-kf-rsb" secondAttribute="trailing" id="n7r-IO-lKO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="0wy-pa-1ye" id="Faq-kA-iT1"/>
+                <outlet property="titleLabel" destination="XlT-CK-hYu" id="Jei-7m-QCw"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="失败" width="37" height="37"/>
+    </resources>
+</document>

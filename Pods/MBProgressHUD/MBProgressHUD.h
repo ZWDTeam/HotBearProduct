@@ -48,7 +48,11 @@ typedef NS_ENUM(NSInteger, MBProgressHUDMode) {
     /// Shows a custom view.
     MBProgressHUDModeCustomView,
     /// Shows only labels.
-    MBProgressHUDModeText
+    MBProgressHUDModeText,
+    //成功
+    MBProgressHUDModeSucceed,
+    //失败
+    MBProgressHUDModeFail
 };
 
 typedef NS_ENUM(NSInteger, MBProgressHUDAnimation) {

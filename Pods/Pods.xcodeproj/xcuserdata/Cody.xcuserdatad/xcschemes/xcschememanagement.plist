@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AliyunOSSiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,9 +34,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0447FB999E67DBB5D86E1FEE3079AFE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C7F33D43BF2B5C17F2A50849228B8D5</key>
 		<dict>
 			<key>primary</key>
@@ -47,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A82B5C4E25AE39A243979B69F694DA9</key>
+		<key>8D2F2FAF50A7242068CE1B8F0843C296</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9F85A41AEB2CCB56ACDA370DF8DDB444</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9BB56485B4BCCD750D09F6F2C4E6364</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HBIdentityBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4L-Cy-wQF">
+                    <rect key="frame" x="16" y="20" width="343" height="40"/>
+                    <color key="backgroundColor" red="0.034985423090000002" green="0.75294117650000003" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="p5F-fr-Nt4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="提交认证">
+                        <color key="titleColor" red="0.97438134519999997" green="0.97438134519999997" blue="0.97438134519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="commitAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="N0K-uB-nEY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpg-CM-4M7">
+                    <rect key="frame" x="16" y="62" width="343" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="1c4-Xu-NIP"/>
+                    </constraints>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="提交即表示同意">
+                                <attributes>
+                                    <color key="NSColor" red="0.25648397839999998" green="0.25648397839999998" blue="0.25648397839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="《热熊用户隐私协议》">
+                                <attributes>
+                                    <color key="NSColor" red="0.088059399515066222" green="0.51097264908020479" blue="0.83445034898477155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="agreeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="DeW-2J-FhM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="j4L-Cy-wQF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="6fY-nw-zpA"/>
+                <constraint firstItem="j4L-Cy-wQF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ARZ-pV-mG9"/>
+                <constraint firstAttribute="trailing" secondItem="j4L-Cy-wQF" secondAttribute="trailing" constant="16" id="Dda-CO-sHQ"/>
+                <constraint firstItem="xpg-CM-4M7" firstAttribute="top" secondItem="j4L-Cy-wQF" secondAttribute="bottom" constant="2" id="Rs4-ig-E2E"/>
+                <constraint firstAttribute="trailing" secondItem="xpg-CM-4M7" secondAttribute="trailing" constant="16" id="jFn-5C-aFZ"/>
+                <constraint firstItem="xpg-CM-4M7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="tcg-5H-yda"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="agreeBtn" destination="xpg-CM-4M7" id="zJL-F3-Iic"/>
+                <outlet property="commitBtn" destination="j4L-Cy-wQF" id="Ohf-j6-PEk"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="313"/>
+        </view>
+    </objects>
+</document>

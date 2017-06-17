@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HBVideoEditingHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="u7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-1o-s1G">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWG-dr-PTn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fCI-Cf-LBC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="u7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="l3o-Ke-5ez">
+                                <rect key="frame" x="92" y="74" width="190" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="WsL-fC-Zkl"/>
+                                    <constraint firstAttribute="width" constant="190" id="tHP-Gj-XKZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置视频封面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfV-g9-TMU">
+                                <rect key="frame" x="121" y="169" width="133" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0bN-fU-Fhy"/>
+                                    <constraint firstAttribute="width" constant="133" id="zSv-yW-hWS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QfV-g9-TMU" firstAttribute="centerX" secondItem="fCI-Cf-LBC" secondAttribute="centerX" id="8XA-9q-d9j"/>
+                            <constraint firstAttribute="bottom" secondItem="QfV-g9-TMU" secondAttribute="bottom" constant="30" id="BuN-37-Ee9"/>
+                            <constraint firstItem="l3o-Ke-5ez" firstAttribute="centerX" secondItem="fCI-Cf-LBC" secondAttribute="centerX" id="pvj-uQ-yuc"/>
+                            <constraint firstAttribute="bottom" secondItem="l3o-Ke-5ez" secondAttribute="bottom" constant="9" id="yEJ-TC-99p"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8mY-1o-s1G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BMu-xU-lSI"/>
+                <constraint firstAttribute="trailing" secondItem="8mY-1o-s1G" secondAttribute="trailing" id="Fe2-S0-se1"/>
+                <constraint firstAttribute="bottom" secondItem="8mY-1o-s1G" secondAttribute="bottom" id="Qf3-iw-d0S"/>
+                <constraint firstItem="JWG-dr-PTn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vtk-8a-VuR"/>
+                <constraint firstAttribute="trailing" secondItem="JWG-dr-PTn" secondAttribute="trailing" id="bj4-Et-p0u"/>
+                <constraint firstItem="8mY-1o-s1G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="c0W-t4-IXY"/>
+                <constraint firstAttribute="bottom" secondItem="JWG-dr-PTn" secondAttribute="bottom" id="v2b-cb-IPz"/>
+                <constraint firstItem="JWG-dr-PTn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vp2-9X-j4M"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backImageView" destination="8mY-1o-s1G" id="Nez-te-EvL"/>
+                <outlet property="centerImageView" destination="l3o-Ke-5ez" id="lKV-xC-QMF"/>
+                <outlet property="heightLayoutConstraint" destination="WsL-fC-Zkl" id="Bj1-kb-lPa"/>
+                <outlet property="widthLayoutConstraint" destination="tHP-Gj-XKZ" id="K8j-ze-O3Z"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="162.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="u7.jpg" width="658" height="987"/>
+    </resources>
+</document>
