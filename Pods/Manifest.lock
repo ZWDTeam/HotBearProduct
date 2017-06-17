@@ -14,25 +14,60 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AlicloudPush (1.9.1):
+    - AlicloudUtils
+  - AlicloudUTDID (1.1.0.16)
+  - AlicloudUtils (1.1.7):
+    - AlicloudUTDID
   - JSONModel (1.7.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MOBFoundation_IDFA (2.2.19)
+  - SMSSDK (2.1.5):
+    - MOBFoundation_IDFA
+  - TencentOpenApiSDK (2.9.5):
+    - TencentOpenApiSDK/Basic (= 2.9.5)
+  - TencentOpenApiSDK/Basic (2.9.5)
   - UMengAnalytics-NO-IDFA (4.2.5)
+  - WechatOpenSDK (1.7.7)
+  - WeiboSDK (3.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - AlicloudPush (~> 1.9.1)
   - JSONModel (~> 1.7.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
+  - SMSSDK
+  - TencentOpenApiSDK (~> 2.9.5)
   - UMengAnalytics-NO-IDFA
+  - WechatOpenSDK
+  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+
+EXTERNAL SOURCES:
+  WeiboSDK:
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+CHECKOUT OPTIONS:
+  WeiboSDK:
+    :commit: cc559ec82e8e89f955e7ecbd60a7565f8b992d86
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AlicloudPush: 4fbee1f82605adc3bfc7c6136dad4a57c6ad4049
+  AlicloudUTDID: f5a7bc1420c5f83e3bd40296e5ab2e5a804a12f8
+  AlicloudUtils: 28729eba18437f58000afb7657c5499c751a0826
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MOBFoundation_IDFA: 4561562ab2364873a904a590dcdffea9f10ab8c6
+  SMSSDK: 7d19654f9d36392988e96bf697afdac983808b1a
+  TencentOpenApiSDK: a0d7716edd6eb438d65828168e8e5137301b436d
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
+  WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
+  WeiboSDK: a678016504873d4c12c35d156eabd232d19b3d3f
 
-PODFILE CHECKSUM: a570ca5f7d46347692afce9539a72cac69d56882
+PODFILE CHECKSUM: b81d656f92ee500b653a8a7228a54c98321cf349
 
 COCOAPODS: 1.2.0

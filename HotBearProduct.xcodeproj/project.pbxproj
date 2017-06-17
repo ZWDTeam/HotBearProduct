@@ -497,7 +497,8 @@
 				TargetAttributes = {
 					C3C6EA521EE310E5001700C6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = NT7Q4GQP2P;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -709,7 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NT7Q4GQP2P;
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -717,9 +718,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GPUImage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhongweidi.hotbear.HotBearProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wxcm.HotBear.nearbyVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a5bbf139-317b-4d1e-813a-249a05576b29";
+				PROVISIONING_PROFILE_SPECIFIER = NeardyDeveloperProvisioning;
 			};
 			name = Debug;
 		};
@@ -737,7 +739,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GPUImage",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhongweidi.hotbear.HotBearProduct;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wxcm.HotBear.nearbyVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
