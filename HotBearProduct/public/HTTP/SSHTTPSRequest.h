@@ -103,6 +103,12 @@ typedef NS_OPTIONS(NSUInteger, HBOtherLoginType) {
  */
 + (void)fetchPrivateNotificationWithUserID:(NSString *)userID type:(NSInteger)type page:(NSNumber *)page pageSize:(NSNumber *)pageSize withSuccesd:(Succesed)succesd withFail:(Fail)fail;
 
+/*!
+ * 获取消息未读条数
+ *
+ */
++ (void)fetchUnreadCountWithUserID:(NSString *)userID withSuccesd:(Succesed)succesd withFail:(Fail)fail;
+
 #pragma mark - 个人相关
 /***********************个人信息处理**********************/
 /*!

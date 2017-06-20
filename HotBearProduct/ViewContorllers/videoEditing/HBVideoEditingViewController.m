@@ -113,7 +113,7 @@
     //价格
     HBVideoEditingPriceTableViewCell * priceCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     NSString * price = [priceCell.priceTextField.text isEqualToString:@"免费"]?  @"0":priceCell.priceTextField.text;
-    
+    if (!price) price = @"0";
     
     //分享类型
 //    HBVideoEditingShareTableViewCell * shareCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2  inSection:0]];

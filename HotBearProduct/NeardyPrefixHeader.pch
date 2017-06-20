@@ -36,9 +36,9 @@
 #import "SSHTTPUploadManager.h"
 #import "HBDocumentManager.h"
 
-#if 0
+#if 1
 
-#define HB_SERVER_IP @"http://172.18.1.159:8080/hotbear/"
+#define HB_SERVER_IP @"http://172.18.1.160:8080/hotbear/"
 
 #else
 

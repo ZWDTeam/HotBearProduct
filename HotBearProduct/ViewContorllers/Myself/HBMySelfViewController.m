@@ -371,8 +371,7 @@
         if (indexPath.row == 0) {
             return 75;
         }else{
-            if ([[HBAccountInfo currentAccount].sex isEqualToString:@"男"])return 44;
-            else  return 60;
+           return 60;
         }
     }
 //    else if (indexPath.section == 3){//播放记录

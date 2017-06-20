@@ -106,8 +106,6 @@
         _bar.defualtCololr = HB_MAIN_COLOR;
         _bar.deSelectColor = HB_MAIN_COLOR;
         _bar.backgroundColor = [UIColor whiteColor];
-        _bar.emallBtn.badgeCount = 2;
-        _bar.emallBtn.annotationType = HBAnnotationTypePoint;
         [self.view addSubview:_bar];
 
         
@@ -180,7 +178,21 @@
 - (void)viewWillAppear:(BOOL)animated{
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     self.navigationController.navigationBarHidden = YES;
+    if ([HBAccountInfo currentAccount].userID) {
+        
+        [SSHTTPSRequest fetchUnreadCountWithUserID:[HBAccountInfo currentAccount].userID withSuccesd:^(id respondsObject) {
+            
+            if ([respondsObject[@"code"] integerValue] == 200) {
+                _bar.emallBtn.badgeCount = [respondsObject[@"tatolunreadcount"] intValue];
+                _bar.emallBtn.annotationType = HBAnnotationTypeNumber;
+            }
+        
+            
+        } withFail:^(NSError *error) {
+            
+        }];
 
+    }
 }
 
 

@@ -100,17 +100,19 @@
         return cell;
     }else{
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell"];
-        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
         if (indexPath.section == 1) {
             cell.textLabel.text = @"ID";
             cell.detailTextLabel.text = [HBAccountInfo currentAccount].id_number;
+            cell.accessoryType = UITableViewCellAccessoryNone;
             
         }else  if (indexPath.section == 2) {
             
             if (indexPath.row == 0) {
                 cell.textLabel.text = @"昵称";
                 cell.detailTextLabel.text = [HBAccountInfo currentAccount].nickname? :@"未设置";
-                
+
             }else if (indexPath.row == 1){
                 cell.textLabel.text = @"性别";
                 cell.detailTextLabel.text = [HBAccountInfo currentAccount].sex;

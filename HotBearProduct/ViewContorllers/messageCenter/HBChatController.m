@@ -47,6 +47,18 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //关闭键盘事件响应
+    [IQKeyboardManager sharedManager].enable = NO;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    //打开键盘事件响应
+    [IQKeyboardManager sharedManager].enable = YES;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

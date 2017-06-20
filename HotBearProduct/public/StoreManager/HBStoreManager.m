@@ -49,24 +49,25 @@
     
     return @[@{@"hearCoin":@"42",
                @"rmb":@"6",
-               @"pID":@"com.wxcm.HotBear.bearpaw6"},
+               @"pID":@"com.wxcm.HotBear.nearbyVideo.6"},
              
              @{@"hearCoin":@"210",
                @"rmb":@"30",
-               @"pID":@"com.wxcm.HotBear.bearpaw210"},
+               @"pID":@"com.wxcm.HotBear.nearbyVideo.30"},
              
              @{@"hearCoin":@"476",
                @"rmb":@"68",
-               @"pID":@"com.wxcm.HotBear.bearpaw68"},
+               @"pID":@"com.wxcm.HotBear.nearbyVideo.68"},
              
              @{@"hearCoin":@"686",
                @"rmb":@"98",
-               @"pID":@"com.wxcm.HotBear.bearpaw98"},
+               @"pID":@"com.wxcm.HotBear.nearbyVideo.98"},
              
              @{@"hearCoin":@"1386",
                @"rmb":@"198",
-               @"pID":@"com.wxcm.HotBear.bearpaw198"}];
+               @"pID":@"com.wxcm.HotBear.nearbyVideo.198"}];
 }
+
 
 -(void)dealloc
 {

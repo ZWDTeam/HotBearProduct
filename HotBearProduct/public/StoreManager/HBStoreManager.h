@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, HBBusinessStatus) {
     HBBusinessStatusNetworkError    = 4, //网络错误
     HBBusinessStatusProductInfoError= 5, //商品信息错误
     HBBusinessStatusUnableBuy       = 6, //无购买权限
-    HBBusinessStatusUnableBught     = 7, //已经购买过次商品
+    HBBusinessStatusUnableBught     = 7, //已经购买过此商品
     
 };
 

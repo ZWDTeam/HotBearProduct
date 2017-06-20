@@ -225,7 +225,6 @@
 		C3EE02521EF5A5D400777B67 /* MDImageCroper.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EE01641EF5A5D300777B67 /* MDImageCroper.m */; };
 		C3EE02531EF5A5D400777B67 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE01661EF5A5D300777B67 /* 1.jpg */; };
 		C3EE02541EF5A5D400777B67 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE01671EF5A5D300777B67 /* 12.jpg */; };
-		C3EE02551EF5A5D400777B67 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE01681EF5A5D300777B67 /* 2.jpg */; };
 		C3EE02561EF5A5D400777B67 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE01691EF5A5D300777B67 /* 3.jpg */; };
 		C3EE02571EF5A5D400777B67 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE016A1EF5A5D300777B67 /* 4.jpg */; };
 		C3EE02581EF5A5D400777B67 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3EE016B1EF5A5D300777B67 /* 5.jpg */; };
@@ -644,7 +643,6 @@
 		C3EE01641EF5A5D300777B67 /* MDImageCroper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDImageCroper.m; sourceTree = "<group>"; };
 		C3EE01661EF5A5D300777B67 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C3EE01671EF5A5D300777B67 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
-		C3EE01681EF5A5D300777B67 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		C3EE01691EF5A5D300777B67 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		C3EE016A1EF5A5D300777B67 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		C3EE016B1EF5A5D300777B67 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
@@ -1069,6 +1067,71 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C32B43E51EF7D69B0050AC28 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE020A1EF5A5D400777B67 /* HBVideoEditingBindingTableViewCell.h */,
+				C3EE020B1EF5A5D400777B67 /* HBVideoEditingBindingTableViewCell.m */,
+				C3EE020F1EF5A5D400777B67 /* HBVideoEditingPriceTableViewCell.h */,
+				C3EE02101EF5A5D400777B67 /* HBVideoEditingPriceTableViewCell.m */,
+				C3EE02111EF5A5D400777B67 /* HBVideoEditingShareTableViewCell.h */,
+				C3EE02121EF5A5D400777B67 /* HBVideoEditingShareTableViewCell.m */,
+				C3EE02131EF5A5D400777B67 /* HBVideoEditingTitleTableViewCell.h */,
+				C3EE02141EF5A5D400777B67 /* HBVideoEditingTitleTableViewCell.m */,
+				C3EE020C1EF5A5D400777B67 /* HBVideoEditingHeaderView.h */,
+				C3EE020D1EF5A5D400777B67 /* HBVideoEditingHeaderView.m */,
+				C3EE020E1EF5A5D400777B67 /* HBVideoEditingHeaderView.xib */,
+				C3EE02081EF5A5D400777B67 /* HBPriceButton.h */,
+				C3EE02091EF5A5D400777B67 /* HBPriceButton.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		C32B43E61EF7E7530050AC28 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE012F1EF5A5D300777B67 /* HBVideoStroysModel.h */,
+				C3EE01301EF5A5D300777B67 /* HBVideoStroysModel.m */,
+				C3EE01101EF5A5D300777B67 /* HBBannerModel.h */,
+				C3EE01111EF5A5D300777B67 /* HBBannerModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C32B43E71EF7E75A0050AC28 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE012C1EF5A5D300777B67 /* HBLocationCollectionViewCell.h */,
+				C3EE012D1EF5A5D300777B67 /* HBLocationCollectionViewCell.m */,
+				C3EE012E1EF5A5D300777B67 /* HBLocationCollectionViewCell.xib */,
+				C3EE01121EF5A5D300777B67 /* HBHomeBannerReusableView.h */,
+				C3EE01131EF5A5D300777B67 /* HBHomeBannerReusableView.m */,
+				C3EE01141EF5A5D300777B67 /* HBHomeCollectionViewCell.h */,
+				C3EE01151EF5A5D300777B67 /* HBHomeCollectionViewCell.m */,
+				C3EE01161EF5A5D300777B67 /* HBHomeCollectionViewCell.xib */,
+				C3EE01171EF5A5D300777B67 /* HBHomeCollectionViewFlowLayout.h */,
+				C3EE01181EF5A5D300777B67 /* HBHomeCollectionViewFlowLayout.m */,
+				C3EE01191EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.h */,
+				C3EE011A1EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.m */,
+				C3EE011B1EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.xib */,
+				C3EE011C1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.h */,
+				C3EE011D1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.m */,
+				C3EE011E1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.xib */,
+				C3EE011F1EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.h */,
+				C3EE01201EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.m */,
+				C3EE01211EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.xib */,
+				C3EE01221EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.h */,
+				C3EE01231EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.m */,
+				C3EE01241EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.xib */,
+				C3EE01251EF5A5D300777B67 /* HBHomeScrollNavigationBar.h */,
+				C3EE01261EF5A5D300777B67 /* HBHomeScrollNavigationBar.m */,
+				C3EE01271EF5A5D300777B67 /* HBHomeScrollNavigationBar.xib */,
+				C3EE01281EF5A5D300777B67 /* HBHomeSegmentNavigationBar.h */,
+				C3EE01291EF5A5D300777B67 /* HBHomeSegmentNavigationBar.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		C3C6EA4A1EE310E5001700C6 = {
 			isa = PBXGroup;
 			children = (
@@ -1403,39 +1466,10 @@
 		C3EE010F1EF5A5D300777B67 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C3EE01101EF5A5D300777B67 /* HBBannerModel.h */,
-				C3EE01111EF5A5D300777B67 /* HBBannerModel.m */,
-				C3EE01121EF5A5D300777B67 /* HBHomeBannerReusableView.h */,
-				C3EE01131EF5A5D300777B67 /* HBHomeBannerReusableView.m */,
-				C3EE01141EF5A5D300777B67 /* HBHomeCollectionViewCell.h */,
-				C3EE01151EF5A5D300777B67 /* HBHomeCollectionViewCell.m */,
-				C3EE01161EF5A5D300777B67 /* HBHomeCollectionViewCell.xib */,
-				C3EE01171EF5A5D300777B67 /* HBHomeCollectionViewFlowLayout.h */,
-				C3EE01181EF5A5D300777B67 /* HBHomeCollectionViewFlowLayout.m */,
-				C3EE01191EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.h */,
-				C3EE011A1EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.m */,
-				C3EE011B1EF5A5D300777B67 /* HBHomeHeadCollectionReusableView.xib */,
-				C3EE011C1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.h */,
-				C3EE011D1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.m */,
-				C3EE011E1EF5A5D300777B67 /* HBHomeLocationFooderReusableView.xib */,
-				C3EE011F1EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.h */,
-				C3EE01201EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.m */,
-				C3EE01211EF5A5D300777B67 /* HBHomeLocationHeaderReusableView.xib */,
-				C3EE01221EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.h */,
-				C3EE01231EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.m */,
-				C3EE01241EF5A5D300777B67 /* HBHomeRecommendCollectionViewCell.xib */,
-				C3EE01251EF5A5D300777B67 /* HBHomeScrollNavigationBar.h */,
-				C3EE01261EF5A5D300777B67 /* HBHomeScrollNavigationBar.m */,
-				C3EE01271EF5A5D300777B67 /* HBHomeScrollNavigationBar.xib */,
-				C3EE01281EF5A5D300777B67 /* HBHomeSegmentNavigationBar.h */,
-				C3EE01291EF5A5D300777B67 /* HBHomeSegmentNavigationBar.m */,
+				C32B43E71EF7E75A0050AC28 /* view */,
+				C32B43E61EF7E7530050AC28 /* model */,
 				C3EE012A1EF5A5D300777B67 /* HBHomeViewController.h */,
 				C3EE012B1EF5A5D300777B67 /* HBHomeViewController.m */,
-				C3EE012C1EF5A5D300777B67 /* HBLocationCollectionViewCell.h */,
-				C3EE012D1EF5A5D300777B67 /* HBLocationCollectionViewCell.m */,
-				C3EE012E1EF5A5D300777B67 /* HBLocationCollectionViewCell.xib */,
-				C3EE012F1EF5A5D300777B67 /* HBVideoStroysModel.h */,
-				C3EE01301EF5A5D300777B67 /* HBVideoStroysModel.m */,
 				C3EE01311EF5A5D300777B67 /* XLsn0wLoop */,
 			);
 			path = Home;
@@ -1559,7 +1593,6 @@
 			children = (
 				C3EE01661EF5A5D300777B67 /* 1.jpg */,
 				C3EE01671EF5A5D300777B67 /* 12.jpg */,
-				C3EE01681EF5A5D300777B67 /* 2.jpg */,
 				C3EE01691EF5A5D300777B67 /* 3.jpg */,
 				C3EE016A1EF5A5D300777B67 /* 4.jpg */,
 				C3EE016B1EF5A5D300777B67 /* 5.jpg */,
@@ -1696,21 +1729,9 @@
 		C3EE02051EF5A5D400777B67 /* videoEditing */ = {
 			isa = PBXGroup;
 			children = (
+				C32B43E51EF7D69B0050AC28 /* view */,
 				C3EE02061EF5A5D400777B67 /* HBCoverSelectViewController.h */,
 				C3EE02071EF5A5D400777B67 /* HBCoverSelectViewController.m */,
-				C3EE02081EF5A5D400777B67 /* HBPriceButton.h */,
-				C3EE02091EF5A5D400777B67 /* HBPriceButton.m */,
-				C3EE020A1EF5A5D400777B67 /* HBVideoEditingBindingTableViewCell.h */,
-				C3EE020B1EF5A5D400777B67 /* HBVideoEditingBindingTableViewCell.m */,
-				C3EE020C1EF5A5D400777B67 /* HBVideoEditingHeaderView.h */,
-				C3EE020D1EF5A5D400777B67 /* HBVideoEditingHeaderView.m */,
-				C3EE020E1EF5A5D400777B67 /* HBVideoEditingHeaderView.xib */,
-				C3EE020F1EF5A5D400777B67 /* HBVideoEditingPriceTableViewCell.h */,
-				C3EE02101EF5A5D400777B67 /* HBVideoEditingPriceTableViewCell.m */,
-				C3EE02111EF5A5D400777B67 /* HBVideoEditingShareTableViewCell.h */,
-				C3EE02121EF5A5D400777B67 /* HBVideoEditingShareTableViewCell.m */,
-				C3EE02131EF5A5D400777B67 /* HBVideoEditingTitleTableViewCell.h */,
-				C3EE02141EF5A5D400777B67 /* HBVideoEditingTitleTableViewCell.m */,
 				C3EE02151EF5A5D400777B67 /* HBVideoEditingViewController.h */,
 				C3EE02161EF5A5D400777B67 /* HBVideoEditingViewController.m */,
 			);
@@ -2431,7 +2452,6 @@
 			files = (
 				C3EE02481EF5A5D400777B67 /* HBRechargeDetailTableViewCell.xib in Resources */,
 				C3EE00C81EF5A19F00777B67 /* face78@2x.png in Resources */,
-				C3EE02551EF5A5D400777B67 /* 2.jpg in Resources */,
 				C3EE00C91EF5A19F00777B67 /* face79@2x.png in Resources */,
 				C3EE02791EF5A5D400777B67 /* HBAddVAuthsectionHeaderView.xib in Resources */,
 				C3EE00931EF5A19F00777B67 /* face2@2x.png in Resources */,
@@ -2945,8 +2965,10 @@
 			baseConfigurationReference = 17FF7053F9A0911549A17FD5 /* Pods-HotBearProduct.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -2967,8 +2989,10 @@
 			baseConfigurationReference = 4A927CDB9B9417E65FE353D2 /* Pods-HotBearProduct.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -3031,8 +3055,10 @@
 			baseConfigurationReference = 4322835A1C979EAA276BBC80 /* Pods-HotBearProduct.ad hoc distribution.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

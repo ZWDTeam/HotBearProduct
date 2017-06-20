@@ -769,6 +769,28 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
 }
 
 /*!
+ * 获取消息未读条数
+ *
+ */
++ (void)fetchUnreadCountWithUserID:(NSString *)userID withSuccesd:(Succesed)succesd withFail:(Fail)fail{
+    AFHTTPSessionManager * manager = hbHTTPSessionManager();
+    
+    NSDictionary * dic =@{@"userId":userID};
+    
+    NSString * url = [HB_SERVER_IP stringByAppendingPathComponent:@"privatemessagelist/gettatolunreadcount"];
+    
+    
+    [manager GET:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        succesd(responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        fail(error);
+    }];
+}
+
+/*!
  * 获取聊天记录
  */
 + (void)fetchRecordUserID:(NSString *)userID toUserID:(NSString *)toUserID page:(NSNumber *)page pageSize:(NSNumber *)pageSize withSuccesd:(Succesed)succesd withFail:(Fail)fail{

@@ -667,9 +667,6 @@
             tableView.reachedTheEnd = YES;
             tableView.centerLoadingView.loadType = HBPullCenterLoadingTypeFinish;
 
-        }else{
-            tableView.centerLoadingView.loadType = HBPullCenterLoadingTypeEmpty;
-            tableView.centerLoadingView.centerLabel.text = @"还没有评论,需要你的支持^_^!";
         }
 
         

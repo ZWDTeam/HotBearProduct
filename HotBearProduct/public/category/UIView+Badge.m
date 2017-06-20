@@ -25,7 +25,7 @@ NSString * const HBBadgeCountKey;
 
 - (void)setOffPoint:(CGPoint)offPoint{
     
-    [self.badgeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.badgeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(offPoint.x));
         make.top.equalTo(@(offPoint.y));
     }];
@@ -36,7 +36,7 @@ NSString * const HBBadgeCountKey;
     UILabel * _badgeLabel = objc_getAssociatedObject(self, &HBViewBadgeKey);
     if (!_badgeLabel) {
         _badgeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        _badgeLabel.font = [UIFont systemFontOfSize:13];
+        _badgeLabel.font = [UIFont systemFontOfSize:11];
         _badgeLabel.textColor =[UIColor whiteColor];
         _badgeLabel.backgroundColor = [UIColor redColor];
         _badgeLabel.textAlignment = NSTextAlignmentCenter;
@@ -78,7 +78,7 @@ NSString * const HBBadgeCountKey;
             self.badgeLabel.hidden = NO;
             self.badgeLabel.textColor = self.badgeLabel.backgroundColor;
             
-            [self.badgeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            [self.badgeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.equalTo(@(8));
                 make.width.equalTo(@(8));
                 make.right.equalTo(@(-10));
@@ -89,15 +89,15 @@ NSString * const HBBadgeCountKey;
             break;
         case HBAnnotationTypeNumber:
         {
-            self.badgeLabel.layer.cornerRadius = 10.0f;
+            self.badgeLabel.layer.cornerRadius = 7.0f;
             self.badgeLabel.hidden = NO;
             self.badgeLabel.textColor = [UIColor whiteColor];
 
-            [self.badgeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.height.equalTo(@(20));
-                make.width.equalTo(@(20));
-                make.right.equalTo(@0);
-                make.top.equalTo(@0);
+            [self.badgeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.equalTo(@(14));
+                make.width.equalTo(@(14));
+                make.right.equalTo(@(-5));
+                make.top.equalTo(@5);
                 
             }];
         }
@@ -118,6 +118,13 @@ NSString * const HBBadgeCountKey;
     objc_setAssociatedObject(self, &HBBadgeCountKey, @(badgeCount),OBJC_ASSOCIATION_COPY_NONATOMIC);
 
     self.badgeLabel.text = [NSString stringWithFormat:@"%d",badgeCount];
+    if (badgeCount == 0) {
+        self.badgeLabel.hidden = YES;
+
+    }else{
+        self.badgeLabel.hidden = NO;
+
+    }
 }
 
 

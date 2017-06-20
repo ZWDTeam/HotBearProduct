@@ -8,7 +8,6 @@
 
 #import "SSVideoInputTouchView.h"
 
-#define HB_record_min_time 10.0f
 
 @interface SSVideoInputTouchView()
 
@@ -19,6 +18,9 @@
 @property (assign , nonatomic)NSTimeInterval duration;//录制的时长
 
 @property (strong , nonatomic)UILabel * timeLabel;//
+
+@property (assign , nonatomic)NSTimeInterval hb_record_min_time;
+
 
 @end
 
@@ -31,7 +33,7 @@
 
     self.maxTime = 60*4;//视频最长时间
     
-    self.minTime = HB_record_min_time;
+    self.minTime = _hb_record_min_time;
     
     self.backgroundColor = [UIColor clearColor];
     
@@ -58,6 +60,14 @@
     return _timeLabel;
 }
 
+
+- (NSTimeInterval)hb_record_min_time{
+    if (_hb_record_min_time == 0) {
+        return 10;
+    }
+    
+    return _hb_record_min_time;
+}
 
 - (void)layoutSubviews{
     [super layoutSubviews];
@@ -131,7 +141,7 @@
         self.recording = NO;
         self.duration = 0;
         [self pauseTimer];
-        self.minTime = HB_record_min_time;
+        self.minTime = _hb_record_min_time;
         [self timerAction:self.timer];
     }
 }
@@ -171,7 +181,7 @@
         }
 
         //开始最小时长限制计算
-        self.minTime = HB_record_min_time;
+        self.minTime = _hb_record_min_time;
         self.ableSave = NO;
         [self pauseTimer];
         
@@ -182,7 +192,7 @@
         self.recording = YES;
 
         //开始最小时长限制计算
-        self.minTime = HB_record_min_time;
+        self.minTime = _hb_record_min_time;
         self.ableSave = NO;
         [self resumeTimer];
         

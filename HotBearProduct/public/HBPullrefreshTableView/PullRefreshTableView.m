@@ -15,7 +15,7 @@
 #define refreshTintColor [UIColor grayColor]
 #define KAttributedColor [UIColor grayColor]
 #define ATTRIBUTRD_TITLE @"正在加载数据"
-#define END_TITLE @"没有了哦"
+#define END_TITLE @""
 #define UPDATA_TITLT @"数据刷新中,请稍后..."
 #define UPDATAING_TITLE @"正在加载..."
 #define UPDATA_ERROR_TITLE @"加载失败,点我重新加载"

@@ -35,7 +35,7 @@
     
     if (self) {
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 45, 45)];
         _imageView.center = CGPointMake(self.frame.size.width/2.0f, 26);
         _imageView.tintColor = DefualtColor;
         [self addSubview:_imageView];
