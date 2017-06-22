@@ -76,6 +76,7 @@
 - (void)initUIWithtoView:(UIView *)toView{
 
     self.editingView = [[HBMovieEditingView alloc] initWithFrame:toView.bounds withDelegate:self];
+    self.editingView.touchInputView.hb_record_min_time = self.isCharg? 20:10;
     
     [toView addSubview:self.editingView];
 }

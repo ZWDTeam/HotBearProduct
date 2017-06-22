@@ -27,7 +27,7 @@
                         <constraint firstAttribute="width" constant="62" id="NPv-BL-Gry"/>
                         <constraint firstAttribute="height" constant="44" id="Oo0-QF-EbC"/>
                     </constraints>
-                    <inset key="imageEdgeInsets" minX="22" minY="7" maxX="10" maxY="7"/>
+                    <inset key="imageEdgeInsets" minX="26" minY="9" maxX="10" maxY="9"/>
                     <state key="normal" image="邮箱"/>
                     <connections>
                         <action selector="emallAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Kpg-tP-mo5"/>

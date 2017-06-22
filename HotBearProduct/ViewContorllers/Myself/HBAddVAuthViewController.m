@@ -247,7 +247,7 @@
                 cell.contentTextView.myPlaceholder = @"例如:某某卫视，某某栏目冠军";
             }else{
                 cell.titleLabel.text = @"辅助信息";
-                cell.contentTextView.myPlaceholder = @"请提供其他平台的个人主页，例如: http://weibo.com/hotbearvideo?refer_flag=1001030101_";
+                cell.contentTextView.myPlaceholder = @"请提供其他平台的个人主页，例如: https://weibo.com/hotbearvideo?refer_flag=1001030101_";
             }
         }else{
             if (indexPath.row == 0) {

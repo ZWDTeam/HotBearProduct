@@ -17,8 +17,8 @@ typedef NS_ENUM(NSInteger, HBCorightType) {
     HBCorightTypeRechargeProtocol, //充值协议
     HBCorightTypeIncomeProtocol,//提现协议
     HBCorightTypeUserProtocol, //用户协议
-    HBCorightTypeUserPrivacyProtocol //用户隐私协议
-
+    HBCorightTypeUserPrivacyProtocol, //用户隐私协议
+    HBCorightTypeQuestion//常见问题
 };
 
 

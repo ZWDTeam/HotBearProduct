@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CD762886B2A03B0B195335E /* libPods-HotBearProduct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53291E942B0D2EE8C1063A54 /* libPods-HotBearProduct.a */; };
+		C319EFCB1EF9196200A94EB8 /* 热度帮助.html in Resources */ = {isa = PBXBuildFile; fileRef = C319EFCA1EF9196200A94EB8 /* 热度帮助.html */; };
 		C3C6EA581EE310E5001700C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6EA571EE310E5001700C6 /* main.m */; };
 		C3C6EA631EE310E5001700C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C6EA621EE310E5001700C6 /* Assets.xcassets */; };
 		C3D5C3061EE3B8260002D5E4 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D5C3051EE3B8260002D5E4 /* libGPUImage.a */; };
@@ -353,6 +354,7 @@
 		4322835A1C979EAA276BBC80 /* Pods-HotBearProduct.ad hoc distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotBearProduct.ad hoc distribution.xcconfig"; path = "Pods/Target Support Files/Pods-HotBearProduct/Pods-HotBearProduct.ad hoc distribution.xcconfig"; sourceTree = "<group>"; };
 		4A927CDB9B9417E65FE353D2 /* Pods-HotBearProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotBearProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotBearProduct/Pods-HotBearProduct.release.xcconfig"; sourceTree = "<group>"; };
 		53291E942B0D2EE8C1063A54 /* libPods-HotBearProduct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotBearProduct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C319EFCA1EF9196200A94EB8 /* 热度帮助.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "热度帮助.html"; sourceTree = "<group>"; };
 		C3C6EA531EE310E5001700C6 /* HotBearProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotBearProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C6EA571EE310E5001700C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3C6EA621EE310E5001700C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1067,6 +1069,90 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C319EFC91EF8C96C00A94EB8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE01E41EF5A5D400777B67 /* HBTabbarAnimationView.h */,
+				C3EE01E51EF5A5D400777B67 /* HBTabbarAnimationView.m */,
+				C3EE01E61EF5A5D400777B67 /* HBTabbarItem.h */,
+				C3EE01E71EF5A5D400777B67 /* HBTabbarItem.m */,
+				C3EE01DF1EF5A5D400777B67 /* HBAnimationTabbarItem.h */,
+				C3EE01E01EF5A5D400777B67 /* HBAnimationTabbarItem.m */,
+				C3EE01E11EF5A5D400777B67 /* HBAnimationTabbarItem.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		C319EFCC1EF9199300A94EB8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE01491EF5A5D300777B67 /* HBIncomeTableViewFooderView.h */,
+				C3EE014A1EF5A5D300777B67 /* HBIncomeTableViewFooderView.m */,
+				C3EE014B1EF5A5D300777B67 /* HBIncomeTableViewFooderView.xib */,
+				C3EE01431EF5A5D300777B67 /* HBIncomeFirstTableViewCell.h */,
+				C3EE01441EF5A5D300777B67 /* HBIncomeFirstTableViewCell.m */,
+				C3EE01531EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.h */,
+				C3EE01541EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.m */,
+				C3EE01551EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.xib */,
+				C3EE014C1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.h */,
+				C3EE014D1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.m */,
+				C3EE014E1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.xib */,
+				C3EE013E1EF5A5D300777B67 /* HBIncomeDetailTableViewCell.h */,
+				C3EE013F1EF5A5D300777B67 /* HBIncomeDetailTableViewCell.m */,
+				C3EE01401EF5A5D300777B67 /* HBIncomeDetailTableViewCell.xib */,
+				C3EE013A1EF5A5D300777B67 /* HBDrawMoneyOptionView.h */,
+				C3EE013B1EF5A5D300777B67 /* HBDrawMoneyOptionView.m */,
+				C3EE01361EF5A5D300777B67 /* HBBearCoinTableViewCell.h */,
+				C3EE01371EF5A5D300777B67 /* HBBearCoinTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		C319EFCD1EF919A400A94EB8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE014F1EF5A5D300777B67 /* HBRechargeModel.h */,
+				C3EE01501EF5A5D300777B67 /* HBRechargeModel.m */,
+				C3EE01511EF5A5D300777B67 /* HBShippingModel.h */,
+				C3EE01521EF5A5D300777B67 /* HBShippingModel.m */,
+				C3EE01451EF5A5D300777B67 /* HBIncomeModel.h */,
+				C3EE01461EF5A5D300777B67 /* HBIncomeModel.m */,
+				C3EE01561EF5A5D300777B67 /* HBWithdrawModel.h */,
+				C3EE01571EF5A5D300777B67 /* HBWithdrawModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C319EFCE1EF9248100A94EB8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE01881EF5A5D300777B67 /* HBChatUserTitleTableViewCell.h */,
+				C3EE01891EF5A5D300777B67 /* HBChatUserTitleTableViewCell.m */,
+				C3EE01831EF5A5D300777B67 /* HBChatPersonTableViewCell.h */,
+				C3EE01841EF5A5D300777B67 /* HBChatPersonTableViewCell.m */,
+				C3EE01851EF5A5D300777B67 /* HBChatPersonTableViewCell.xib */,
+				C3EE01811EF5A5D300777B67 /* HBChatMsgNavigationBar.h */,
+				C3EE01821EF5A5D300777B67 /* HBChatMsgNavigationBar.m */,
+				C3EE017E1EF5A5D300777B67 /* HBChatMessageTableViewCell.h */,
+				C3EE017F1EF5A5D300777B67 /* HBChatMessageTableViewCell.m */,
+				C3EE01801EF5A5D300777B67 /* HBChatMessageTableViewCell.xib */,
+				C3EE017A1EF5A5D300777B67 /* HBChatHeaderTableViewCell.h */,
+				C3EE017B1EF5A5D300777B67 /* HBChatHeaderTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		C319EFCF1EF9249400A94EB8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C3EE018C1EF5A5D300777B67 /* HBPrivateMsgLastModel.h */,
+				C3EE018D1EF5A5D300777B67 /* HBPrivateMsgLastModel.m */,
+				C3EE017C1EF5A5D300777B67 /* HBChatMessageModel.h */,
+				C3EE017D1EF5A5D300777B67 /* HBChatMessageModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		C32B43E51EF7D69B0050AC28 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -1488,40 +1574,16 @@
 		C3EE01351EF5A5D300777B67 /* incomeAndDrawMoney */ = {
 			isa = PBXGroup;
 			children = (
-				C3EE01361EF5A5D300777B67 /* HBBearCoinTableViewCell.h */,
-				C3EE01371EF5A5D300777B67 /* HBBearCoinTableViewCell.m */,
+				C319EFCD1EF919A400A94EB8 /* model */,
+				C319EFCC1EF9199300A94EB8 /* view */,
 				C3EE01381EF5A5D300777B67 /* HBDrawMoneyDetailViewController.h */,
 				C3EE01391EF5A5D300777B67 /* HBDrawMoneyDetailViewController.m */,
-				C3EE013A1EF5A5D300777B67 /* HBDrawMoneyOptionView.h */,
-				C3EE013B1EF5A5D300777B67 /* HBDrawMoneyOptionView.m */,
 				C3EE013C1EF5A5D300777B67 /* HBDrawMoneyViewController.h */,
 				C3EE013D1EF5A5D300777B67 /* HBDrawMoneyViewController.m */,
-				C3EE013E1EF5A5D300777B67 /* HBIncomeDetailTableViewCell.h */,
-				C3EE013F1EF5A5D300777B67 /* HBIncomeDetailTableViewCell.m */,
-				C3EE01401EF5A5D300777B67 /* HBIncomeDetailTableViewCell.xib */,
 				C3EE01411EF5A5D300777B67 /* HBInComeDetailViewController.h */,
 				C3EE01421EF5A5D300777B67 /* HBInComeDetailViewController.m */,
-				C3EE01431EF5A5D300777B67 /* HBIncomeFirstTableViewCell.h */,
-				C3EE01441EF5A5D300777B67 /* HBIncomeFirstTableViewCell.m */,
-				C3EE01451EF5A5D300777B67 /* HBIncomeModel.h */,
-				C3EE01461EF5A5D300777B67 /* HBIncomeModel.m */,
 				C3EE01471EF5A5D300777B67 /* HBIncomeRecordViewController.h */,
 				C3EE01481EF5A5D300777B67 /* HBIncomeRecordViewController.m */,
-				C3EE01491EF5A5D300777B67 /* HBIncomeTableViewFooderView.h */,
-				C3EE014A1EF5A5D300777B67 /* HBIncomeTableViewFooderView.m */,
-				C3EE014B1EF5A5D300777B67 /* HBIncomeTableViewFooderView.xib */,
-				C3EE014C1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.h */,
-				C3EE014D1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.m */,
-				C3EE014E1EF5A5D300777B67 /* HBRechargeDetailTableViewCell.xib */,
-				C3EE014F1EF5A5D300777B67 /* HBRechargeModel.h */,
-				C3EE01501EF5A5D300777B67 /* HBRechargeModel.m */,
-				C3EE01511EF5A5D300777B67 /* HBShippingModel.h */,
-				C3EE01521EF5A5D300777B67 /* HBShippingModel.m */,
-				C3EE01531EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.h */,
-				C3EE01541EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.m */,
-				C3EE01551EF5A5D300777B67 /* HBWithdrawDetailTableViewCell.xib */,
-				C3EE01561EF5A5D300777B67 /* HBWithdrawModel.h */,
-				C3EE01571EF5A5D300777B67 /* HBWithdrawModel.m */,
 			);
 			path = incomeAndDrawMoney;
 			sourceTree = "<group>";
@@ -1539,29 +1601,15 @@
 		C3EE015C1EF5A5D300777B67 /* messageCenter */ = {
 			isa = PBXGroup;
 			children = (
+				C319EFCF1EF9249400A94EB8 /* model */,
+				C319EFCE1EF9248100A94EB8 /* view */,
 				C3EE015D1EF5A5D300777B67 /* DGChatView */,
 				C3EE01781EF5A5D300777B67 /* HBChatController.h */,
 				C3EE01791EF5A5D300777B67 /* HBChatController.m */,
-				C3EE017A1EF5A5D300777B67 /* HBChatHeaderTableViewCell.h */,
-				C3EE017B1EF5A5D300777B67 /* HBChatHeaderTableViewCell.m */,
-				C3EE017C1EF5A5D300777B67 /* HBChatMessageModel.h */,
-				C3EE017D1EF5A5D300777B67 /* HBChatMessageModel.m */,
-				C3EE017E1EF5A5D300777B67 /* HBChatMessageTableViewCell.h */,
-				C3EE017F1EF5A5D300777B67 /* HBChatMessageTableViewCell.m */,
-				C3EE01801EF5A5D300777B67 /* HBChatMessageTableViewCell.xib */,
-				C3EE01811EF5A5D300777B67 /* HBChatMsgNavigationBar.h */,
-				C3EE01821EF5A5D300777B67 /* HBChatMsgNavigationBar.m */,
-				C3EE01831EF5A5D300777B67 /* HBChatPersonTableViewCell.h */,
-				C3EE01841EF5A5D300777B67 /* HBChatPersonTableViewCell.m */,
-				C3EE01851EF5A5D300777B67 /* HBChatPersonTableViewCell.xib */,
 				C3EE01861EF5A5D300777B67 /* HBChatUserDetailViewController.h */,
 				C3EE01871EF5A5D300777B67 /* HBChatUserDetailViewController.m */,
-				C3EE01881EF5A5D300777B67 /* HBChatUserTitleTableViewCell.h */,
-				C3EE01891EF5A5D300777B67 /* HBChatUserTitleTableViewCell.m */,
 				C3EE018A1EF5A5D300777B67 /* HBMessageCenterController.h */,
 				C3EE018B1EF5A5D300777B67 /* HBMessageCenterController.m */,
-				C3EE018C1EF5A5D300777B67 /* HBPrivateMsgLastModel.h */,
-				C3EE018D1EF5A5D300777B67 /* HBPrivateMsgLastModel.m */,
 			);
 			path = messageCenter;
 			sourceTree = "<group>";
@@ -1658,15 +1706,9 @@
 		C3EE01DE1EF5A5D400777B67 /* RootTabbar */ = {
 			isa = PBXGroup;
 			children = (
-				C3EE01DF1EF5A5D400777B67 /* HBAnimationTabbarItem.h */,
-				C3EE01E01EF5A5D400777B67 /* HBAnimationTabbarItem.m */,
-				C3EE01E11EF5A5D400777B67 /* HBAnimationTabbarItem.xib */,
+				C319EFC91EF8C96C00A94EB8 /* view */,
 				C3EE01E21EF5A5D400777B67 /* HBBaseTabbarController.h */,
 				C3EE01E31EF5A5D400777B67 /* HBBaseTabbarController.m */,
-				C3EE01E41EF5A5D400777B67 /* HBTabbarAnimationView.h */,
-				C3EE01E51EF5A5D400777B67 /* HBTabbarAnimationView.m */,
-				C3EE01E61EF5A5D400777B67 /* HBTabbarItem.h */,
-				C3EE01E71EF5A5D400777B67 /* HBTabbarItem.m */,
 			);
 			path = RootTabbar;
 			sourceTree = "<group>";
@@ -1762,6 +1804,7 @@
 		C3EE02C51EF5A85A00777B67 /* copyRight */ = {
 			isa = PBXGroup;
 			children = (
+				C319EFCA1EF9196200A94EB8 /* 热度帮助.html */,
 				C3EE02C61EF5A85A00777B67 /* 充值帮助.html */,
 				C3EE02C71EF5A85A00777B67 /* 兑换帮助.html */,
 				C3EE02C81EF5A85A00777B67 /* 条律文字.html */,
@@ -2604,6 +2647,7 @@
 				C3EE00851EF5A19F00777B67 /* face17@2x.png in Resources */,
 				C3EE00971EF5A19F00777B67 /* face33@2x.png in Resources */,
 				C3EE02981EF5A5D400777B67 /* HBReportFootedView.xib in Resources */,
+				C319EFCB1EF9196200A94EB8 /* 热度帮助.html in Resources */,
 				C3EE00981EF5A19F00777B67 /* face34@2x.png in Resources */,
 				C3EE02541EF5A5D400777B67 /* 12.jpg in Resources */,
 				C3EE02601EF5A5D400777B67 /* plyer.png in Resources */,
@@ -2911,7 +2955,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2953,7 +2997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -3043,7 +3087,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

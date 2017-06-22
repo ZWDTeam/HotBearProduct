@@ -69,6 +69,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     
     PullRefreshTableView * tableView = self.tableViews.firstObject;
     if (tableView) {
@@ -402,7 +403,7 @@
         [LastModel setUnreadCount:0];
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         
-        [self performSegueWithIdentifier:@"messageListShowMessageDetail" sender:model];
+        [self performSegueWithIdentifier:@"messageListShowMessageDetail" sender:indexPath];
         
     }else{
         
@@ -484,9 +485,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"messageListShowMessageDetail"]) {
-        HBPrivateMsgLastModel * model  =sender;
+        NSIndexPath * indexPath = sender;
+        HBPrivateMsgLastModel * model = self.allMessages[0][indexPath.row];
         HBChatController * vc = segue.destinationViewController;
         vc.msgLastModel = model;
+        vc.deleteSuccedBlock = ^{
+            
+            [self.allMessages[0] removeObjectAtIndex:indexPath.row];
+            [self.tableViews[0] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        };
         
     }else if ([segue.identifier isEqualToString:@"privateMsgShowVideoPlayer"]){
         

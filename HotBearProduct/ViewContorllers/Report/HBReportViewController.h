@@ -16,4 +16,6 @@
 
 @property (strong , nonatomic)HBCommentModel * commentModel;
 
+@property (strong , nonatomic)HBAccountInfo * userModel;
+
 @end

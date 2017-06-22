@@ -223,9 +223,14 @@
 
 //协议
 - (void)copyRightBtnAction{
-    [self performSegueWithIdentifier:@"IncomeShowClause2" sender:nil];
+    [self performSegueWithIdentifier:@"IncomeShowClause2" sender:@(HBCorightTypeIncomeProtocol)];
 }
 
+//常见问题
+- (IBAction)questionAction:(id)sender {
+    [self performSegueWithIdentifier:@"IncomeShowClause2" sender:@(HBCorightTypeQuestion)];
+
+}
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -355,7 +360,7 @@
         vc.corightType = HBCorightTypeIncomeHelp;
     }else if ([segue.identifier isEqualToString:@"IncomeShowClause2"]){
         HBClauseViewController * vc = segue.destinationViewController;
-        vc.corightType = HBCorightTypeIncomeProtocol;
+        vc.corightType = [sender intValue];
 
     }
     

@@ -50,7 +50,6 @@
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBarHidden = NO;
-    self.navigationController.navigationBar.hidden = NO;
     
 
     [HBAccountInfo refreshServerAccountInfo];//更新服务器个人资料
@@ -98,9 +97,8 @@
 }
 
 #pragma mark - UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;// return 7
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -342,27 +340,15 @@
         }
         
     }
-    else if (indexPath.section == 4) {//客服
-        identifier = @"messageCell";
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        UILabel * label = [cell viewWithTag:100];
-        label.text = @"官方客服";
-        UILabel * detailLabel = [cell viewWithTag:102];
-        detailLabel.hidden = YES;
-        return cell;
-
-    }
     else{//设置
         identifier = @"messageCell";
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         UILabel * label = [cell viewWithTag:100];
-        label.text = @"设置";
+        label.text = @"隐私与其它设置";
         UILabel * detailLabel = [cell viewWithTag:102];
         detailLabel.hidden = YES;
         return cell;
     }
-    
-    
 }
 
 #pragma mark - UITableViewDelegate
@@ -421,8 +407,8 @@
     }else if (indexPath.section == 1){//个人消息
         
         if (indexPath.row == 0) {
-            [self performSegueWithIdentifier:@"mySelfShowMessage" sender:indexPath];
-        }else{
+            [self performSegueWithIdentifier:@"mySelfShowMessageCenter" sender:indexPath];
+        }else{//我的关注
             [self performSegueWithIdentifier:@"mySelfShowPlayRecord" sender:indexPath];
         }
 
@@ -436,8 +422,6 @@
                 [self performSegueWithIdentifier:@"MyselfShowIdentity" sender:indexPath];
 
             }else if([HBAccountInfo currentAccount].authenticationTab.integerValue == 1){//审核中
-//                [self performSegueWithIdentifier:@"MyselfShowAuthStatus" sender:indexPath];
-
                 
             }else if ([HBAccountInfo currentAccount].authenticationTab.integerValue == 2){//审核完成
                 [self performSegueWithIdentifier:@"showIdentiAuthIng" sender:indexPath];
@@ -451,7 +435,6 @@
                 [self performSegueWithIdentifier:@"showAddVAuth" sender:indexPath];
                 
             }else if([HBAccountInfo currentAccount].vAuthenticationTab.integerValue == 1){//审核中
-//                [self performSegueWithIdentifier:@"MyselfShowAuthStatus" sender:indexPath];
                 
             }else if ([HBAccountInfo currentAccount].vAuthenticationTab.integerValue == 2){//审核完成
                 [self performSegueWithIdentifier:@"showAddVAuthFinished" sender:indexPath];
@@ -462,13 +445,10 @@
             
         }
 
-    }else if(indexPath.section == 4){//官方客服
+    }else if(indexPath.section == 4){//设置
         
-        [self performSegueWithIdentifier:@"showSysService" sender:indexPath];
-        
-    }else{//设置
         [self performSegueWithIdentifier:@"mySelfShowSetting" sender:indexPath];
-
+        
     }
 
     

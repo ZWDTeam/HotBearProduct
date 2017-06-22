@@ -244,11 +244,18 @@
 //根据videoID加载视频信息
 -(void)fetchVideoStroyInfoWithVideoStroyID:(NSString *)videoID{
     
-    if (!videoID)return;
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.label.font = [UIFont systemFontOfSize:14];
     hud.label.text = @"正在加载...";
     hud.mode = MBProgressHUDModeIndeterminate;
+    
+    if (!videoID){
+        hud.label.text = @"服务器错误!";
+        hud.mode = MBProgressHUDModeFail;
+        [hud hideAnimated:YES afterDelay:1.5f];
+        return;
+    }
+
     
     [SSHTTPSRequest fetchVideoDetailInfoWithVideoID:videoID userID:[HBAccountInfo currentAccount].userID withSuccesd:^(id respondsObject) {
         
@@ -500,7 +507,7 @@
     [MobClick beginLogPageView:@"VideoPlayerDetail"];//("PageOne"为页面名称，可自定义)
 
     
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBarHidden = YES;
     
     
     if (self.tableView) {//主要是刷新关注按钮信息
@@ -545,8 +552,6 @@
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    
-
 }
 
 
@@ -639,7 +644,9 @@
         return;
     }
     
-         [self performSegueWithIdentifier:@"playerDetialShowChatView" sender:nil];
+    if (self.storyModel) {
+        [self performSegueWithIdentifier:@"playerDetialShowChatView" sender:nil];
+    }
 }
 
 
@@ -662,14 +669,10 @@
             [self.comments addObjectsFromArray:commentsModel.comments];
             
         }
-        
-        if (commentsModel.comments.count > 0) {
-            tableView.reachedTheEnd = YES;
-            tableView.centerLoadingView.loadType = HBPullCenterLoadingTypeFinish;
 
-        }
+        tableView.reachedTheEnd = YES;
+        tableView.centerLoadingView.loadType = HBPullCenterLoadingTypeFinish;
 
-        
         [tableView reloadData];
         
     } withFail:^(NSError *error) {

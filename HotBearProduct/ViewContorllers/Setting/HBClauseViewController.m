@@ -71,7 +71,16 @@
             self.title =  @"用户隐私协议";
             url = [NSURL URLWithString:@"https://www.hotbearvideo.com/privacy/privacy.html"];
         }
+            
+        
+        case HBCorightTypeQuestion:
+        {
+            self.title =  @"热度帮助";
+            url =  [[NSBundle mainBundle] URLForResource:@"热度帮助" withExtension:@"html"];
 
+            
+        }
+            break;
             
             
         default:

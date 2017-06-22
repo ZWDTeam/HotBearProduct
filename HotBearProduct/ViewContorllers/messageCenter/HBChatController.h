@@ -10,8 +10,12 @@
 #import "HBChatController.h"
 #import "HBPrivateMsgLastModel.h"
 
+typedef void(^deleteRecordBlock)(void);
+
 @interface HBChatController : HBBaseViewController
 
 @property (strong , nonatomic) HBPrivateMsgLastModel * msgLastModel;
+
+@property (copy , nonatomic)deleteRecordBlock deleteSuccedBlock;
 
 @end

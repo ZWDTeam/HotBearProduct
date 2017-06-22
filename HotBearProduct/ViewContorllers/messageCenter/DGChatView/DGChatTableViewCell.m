@@ -54,7 +54,7 @@ static CGFloat _dateTypeHeight = 25.0f;//时间分割线高度
 
 @implementation DGChatTableViewCell
 
-- (id)initWithDelegate:(id)delegate reuseIdentifier:(NSString *)reuseIdentifier{
+- (id)initWithDelegate:(id<DGChatTableViewCellDelegate>)delegate reuseIdentifier:(NSString *)reuseIdentifier{
     self = [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     
     if (self) {
@@ -117,6 +117,9 @@ static CGFloat _dateTypeHeight = 25.0f;//时间分割线高度
         _headerImageView.layer.cornerRadius = 5.0f;
         _headerImageView.layer.masksToBounds = YES;
         _headerImageView.layer.shadowPath = [UIBezierPath bezierPathWithRect:_headerImageView.frame].CGPath;
+        _headerImageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognizerWithHeaderImageView:)];
+        [_headerImageView addGestureRecognizer:tap];
         
         [self.contentView addSubview:_headerImageView];
     }
@@ -403,6 +406,23 @@ static CGFloat _dateTypeHeight = 25.0f;//时间分割线高度
     }
 }
 
+- (void)tapGestureRecognizerWithHeaderImageView:(UITapGestureRecognizer *)tap{
+    if ([self.delegate respondsToSelector:@selector(dgTableView:selectHearImageViewWithIndexPath:)]) {
+        UIView * view = self.superview;
+        
+        while (![view isKindOfClass:[UITableView class]]) {
+            view = view.superview;
+        }
+        
+        UITableView * tableView = (UITableView *)view;
+        NSIndexPath * indexPath = [tableView indexPathForCell:self];
+        
+        [self.delegate dgTableView:tableView selectHearImageViewWithIndexPath:indexPath];
+        
+    }
+}
+
+//消息发送失败，点击重发按钮
 - (void)sendFailButtonAction:(UIButton *)sender{
     UIView * view = self.superview;
     

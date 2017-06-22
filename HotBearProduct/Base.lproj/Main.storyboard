@@ -392,7 +392,7 @@
                                         <inset key="imageEdgeInsets" minX="22" minY="5" maxX="12" maxY="5"/>
                                         <state key="normal" image="更多"/>
                                         <connections>
-                                            <segue destination="eFC-X9-OLX" kind="show" identifier="chatShowUserDetail" id="oDe-U3-LIO"/>
+                                            <action selector="reportAction:" destination="994-oO-0oL" eventType="touchUpInside" id="Rm2-oE-bKr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -475,6 +475,8 @@
                         <outlet property="returnBtn" destination="UtJ-cO-5Fb" id="kA7-XN-nXt"/>
                         <outlet property="tableView" destination="A8S-gk-2Rr" id="kqD-WL-Ean"/>
                         <outlet property="titleLabel" destination="CwA-zs-fQ5" id="GHE-MK-NRr"/>
+                        <segue destination="eFC-X9-OLX" kind="show" identifier="chatShowUserDetail" id="Zd8-jS-ABD"/>
+                        <segue destination="DMh-fC-AAh" kind="show" identifier="chatShowReport" id="sFV-Vv-iMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxq-Bx-GpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EE5-uw-Eqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2859" y="-1534"/>
+            <point key="canvasLocation" x="3739" y="-1597"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="Cee-fa-wbC">
@@ -757,7 +759,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="u7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hsS-lQ-3M3">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsS-lQ-3M3">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="236"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-5V-M3J">
@@ -1586,7 +1588,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="pJG-0p-Xth"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="evh-gM-zpG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evh-gM-zpG">
                                                     <rect key="frame" x="8" y="42" width="147.5" height="91.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢我就点我吧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-6g-0Nu">
@@ -1598,7 +1600,7 @@
                                                     <color key="textColor" red="0.3433732551" green="0.3433732551" blue="0.3433732551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="OU1-nS-GYh">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OU1-nS-GYh">
                                                     <rect key="frame" x="164.5" y="42" width="147.5" height="91.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不点我搞死你" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V4-qt-spl">
@@ -1702,6 +1704,7 @@
                         <segue destination="xw1-4G-4z8" kind="show" identifier="showIdentiAuthIng" id="bRG-R8-TKp"/>
                         <segue destination="BzJ-H4-pZT" kind="show" identifier="MyselfShowAuthStatus" id="j71-jR-pgl"/>
                         <segue destination="bEp-Rn-YI0" kind="show" identifier="showAddVAuthFinished" id="nJH-KK-XKD"/>
+                        <segue destination="Mj5-LH-DfT" kind="show" identifier="mySelfShowMessageCenter" id="6gu-WT-RYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hze-dA-cFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3592,7 +3595,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="u7.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-J2-LQs">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MXb-J2-LQs">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRy-Rf-xp9">
@@ -3750,11 +3753,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="190" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-kM-uiP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.93667459487915039" green="0.93747365474700928" blue="0.95747143030166626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="533"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomeFristCell" rowHeight="185" id="szj-He-ouF" customClass="HBIncomeFirstTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="320" height="185"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="szj-He-ouF" id="21t-47-WnY">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
@@ -3843,7 +3846,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="zfbCell" textLabel="BTD-dk-gXZ" detailTextLabel="Wqj-Vo-fVi" rowHeight="44" style="IBUITableViewCellStyleValue1" id="OWT-Qb-r9R">
-                                        <rect key="frame" x="0.0" y="241" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="240.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWT-Qb-r9R" id="1Xd-o8-0Su">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -3867,7 +3870,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bearCoinCell" rowHeight="44" id="vxF-Ee-iF5" customClass="HBBearCoinTableViewCell">
-                                        <rect key="frame" x="0.0" y="285" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="284.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vxF-Ee-iF5" id="wlu-ff-Wcs">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -3905,7 +3908,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moneyCell" textLabel="XJ6-79-blP" detailTextLabel="oiK-Nn-9wr" rowHeight="44" style="IBUITableViewCellStyleValue1" id="2fz-rg-fZ3">
-                                        <rect key="frame" x="0.0" y="329" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="328.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2fz-rg-fZ3" id="qQR-5l-BD3">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -3934,12 +3937,26 @@
                                     <outlet property="delegate" destination="Emd-mO-43L" id="hwC-4b-XMq"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkf-ML-YJl">
+                                <rect key="frame" x="95" y="533" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="aW1-W9-axx"/>
+                                    <constraint firstAttribute="height" constant="30" id="gfd-T9-E4E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="常见问题"/>
+                                <connections>
+                                    <action selector="questionAction:" destination="Emd-mO-43L" eventType="touchUpInside" id="luU-65-YUE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="w3m-kM-uiP" secondAttribute="trailing" id="9CW-IB-jSQ"/>
                             <constraint firstItem="w3m-kM-uiP" firstAttribute="leading" secondItem="kAh-eL-KVM" secondAttribute="leading" id="LKZ-ld-Vnm"/>
-                            <constraint firstAttribute="bottom" secondItem="w3m-kM-uiP" secondAttribute="bottom" id="uLr-cl-SS5"/>
+                            <constraint firstItem="Zkf-ML-YJl" firstAttribute="centerX" secondItem="kAh-eL-KVM" secondAttribute="centerX" id="fMh-oU-TdY"/>
+                            <constraint firstItem="Zkf-ML-YJl" firstAttribute="bottom" secondItem="kAh-eL-KVM" secondAttribute="bottomMargin" constant="-5" id="i3t-i6-xGn"/>
+                            <constraint firstItem="Zkf-ML-YJl" firstAttribute="top" secondItem="w3m-kM-uiP" secondAttribute="bottom" id="vMY-p5-MZn"/>
                             <constraint firstItem="w3m-kM-uiP" firstAttribute="top" secondItem="kAh-eL-KVM" secondAttribute="top" id="wfo-JL-eSV"/>
                         </constraints>
                     </view>
@@ -3974,7 +3991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsp-We-zRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="1326"/>
+            <point key="canvasLocation" x="639.375" y="1325.7042253521126"/>
         </scene>
         <!--设置-->
         <scene sceneID="zoL-Ch-d4c">
@@ -4085,7 +4102,6 @@
         <image name="icon200" width="200" height="200"/>
         <image name="moneyCorder" width="44" height="46"/>
         <image name="testheader.png" width="103" height="103"/>
-        <image name="testimage.png" width="265" height="165"/>
         <image name="u7.jpg" width="658" height="987"/>
         <image name="上传身份证" width="100" height="100"/>
         <image name="分享" width="46" height="46"/>
@@ -4105,12 +4121,14 @@
         <image name="默认头像" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KDh-kV-Ts8"/>
-        <segue reference="0Sl-Ci-aMc"/>
-        <segue reference="s9p-pZ-GHW"/>
-        <segue reference="c4U-Xf-8zF"/>
-        <segue reference="9Yj-jM-D26"/>
-        <segue reference="sQ2-tK-YiC"/>
-        <segue reference="lYa-p3-5n9"/>
+        <segue reference="g1x-fD-2sT"/>
+        <segue reference="IeE-Ps-iXn"/>
+        <segue reference="MvF-qF-5Gi"/>
+        <segue reference="6gu-WT-RYT"/>
+        <segue reference="0LC-Ov-sYv"/>
+        <segue reference="neK-sg-OgJ"/>
+        <segue reference="Nlq-ZM-gGm"/>
+        <segue reference="CpN-mE-g7S"/>
+        <segue reference="sFV-Vv-iMz"/>
     </inferredMetricsTieBreakers>
 </document>

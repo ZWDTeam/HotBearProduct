@@ -16,7 +16,7 @@
 
     self.iconLabel.layer.cornerRadius = CGRectGetHeight(self.iconLabel.bounds)/2.0f;
     self.iconLabel.layer.masksToBounds = YES;
-    self.iconLabel.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.iconLabel.layer.borderColor = [UIColor grayColor].CGColor;
     self.iconLabel.layer.borderWidth = 2.0f;
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;

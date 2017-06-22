@@ -130,7 +130,8 @@
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
                 hud.mode = MBProgressHUDModeFail;
-                hud.label.text = @"网络错误，如您已扣款，网络连接后会自动完成充值请放心!";
+                hud.label.text = @"网络错误，如您已扣款，网络连接后会自动完成充值,请放心!";
+                hud.label.numberOfLines = 0;
                 [hud hideAnimated:YES afterDelay:1.5];
             }];
             

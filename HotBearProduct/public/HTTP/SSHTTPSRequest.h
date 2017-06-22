@@ -184,7 +184,7 @@ typedef NS_OPTIONS(NSUInteger, HBOtherLoginType) {
 /*!
  * 举报
  */
-+ (void)reportWithUserID:(NSString *)userID content:(NSString *)cotent type:(NSNumber *)type commentID:(NSString *)commentID videoID:(NSString *)videoID withSuccesd:(Succesed)succesd withFail:(Fail)fail;
++ (void)reportWithUserID:(NSString *)userID content:(NSString *)cotent type:(NSNumber *)type commentID:(NSString *)commentID videoID:(NSString *)videoID  toUserID:(NSString *)toUserID withSuccesd:(Succesed)succesd withFail:(Fail)fail;
 
 /*!
  * 我的消息
@@ -228,6 +228,13 @@ typedef NS_OPTIONS(NSUInteger, HBOtherLoginType) {
  * 获取聊天记录
  */
 + (void)fetchRecordUserID:(NSString *)userID toUserID:(NSString *)toUserID page:(NSNumber *)page pageSize:(NSNumber *)pageSize withSuccesd:(Succesed)succesd withFail:(Fail)fail;
+
+/*!
+ * 删除聊天记录
+ * @param userID      用户ID
+ * @param msgLastID   最后一条消息的ID
+ */
++ (void)deleteChatRecordWithUserID:(NSString *)userID msgLastID:(NSString *)msgLastID withSuccesd:(Succesed)succesd withFail:(Fail)fail;
 
 /*!
  * 发送私信消息
