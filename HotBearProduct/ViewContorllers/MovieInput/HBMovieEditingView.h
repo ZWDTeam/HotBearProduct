@@ -9,11 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-
-
-
-
-
 @class SSVideoInputTouchView;
 @class HBMovieEditingView;
 

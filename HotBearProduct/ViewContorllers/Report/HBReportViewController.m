@@ -57,7 +57,7 @@
         }else{
             hud.label.text = @"正在提交...";
             hud.mode = MBProgressHUDModeIndeterminate;
-            [SSHTTPSRequest reportWithUserID:[HBAccountInfo currentAccount].userID content:content type:@(strongSelf.seletedIndex) commentID:strongSelf.commentModel.commentID videoID:strongSelf.storyModel.videoID withSuccesd:^(id respondsObject) {
+            [SSHTTPSRequest reportWithUserID:[HBAccountInfo currentAccount].userID content:content type:@(strongSelf.seletedIndex) commentID:strongSelf.commentModel.commentID videoID:strongSelf.storyModel.videoID toUserID:strongSelf.userModel.userID withSuccesd:^(id respondsObject) {
                 
                 
                 if ([respondsObject[@"code"] integerValue] == 200) {
@@ -105,8 +105,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBar.hidden = NO;
     self.navigationController.navigationBarHidden = NO;
 }
 

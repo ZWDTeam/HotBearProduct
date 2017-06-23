@@ -101,6 +101,12 @@ NSString * QQChatShareSucceedNotificationKey = @"QQChatShareSucceedNotificationK
     
     // 向微信请求授权后,得到响应结果
     if ([resp isKindOfClass:[SendAuthResp class]]) {
+        
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:keyWindow animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.label.text = @"正在授权...";
+        
         SendAuthResp *temp = (SendAuthResp *)resp;
         
         //获取授权信息
@@ -113,11 +119,16 @@ NSString * QQChatShareSucceedNotificationKey = @"QQChatShareSucceedNotificationK
                 //获取个人资料
                 [self weChatFecthUserInfoWithAccessTokenInfo:responseObject sussess:^(id  _Nullable responseObject) {
                     
+                    [hud hideAnimated:YES];
+                    
                     //发送微信获取个人资料通知
                     [[NSNotificationCenter defaultCenter] postNotificationName:HBWeChatUserInfoSuccessNotificationKey object:nil userInfo:responseObject];
                     
                 } failure:^(NSError * _Nonnull error) {
                    
+                    hud.label.text = @"授权失败!";
+                    [hud hideAnimated:YES afterDelay:1.5];
+
                     //发送微信授权失败通知
                     [[NSNotificationCenter defaultCenter] postNotificationName:HBWeChatUserInfofailNotificationKey object:nil userInfo:responseObject];
                     
@@ -127,11 +138,16 @@ NSString * QQChatShareSucceedNotificationKey = @"QQChatShareSucceedNotificationK
              
                 //发送微信授权失败通知
                 [[NSNotificationCenter defaultCenter] postNotificationName:HBWeChatUserInfofailNotificationKey object:nil userInfo:responseObject];
+                
+                hud.label.text = @"授权取消!";
+                [hud hideAnimated:YES afterDelay:1.5];
             }
             
             
         } failure:^(NSError * _Nonnull error) {
-            
+            hud.label.text = @"网络错误!";
+            [hud hideAnimated:YES afterDelay:1.5];
+
         }];
 
     }else if ([resp isKindOfClass:[SendMessageToWXResp class]]){//分享回调

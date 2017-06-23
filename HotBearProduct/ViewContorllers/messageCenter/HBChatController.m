@@ -12,6 +12,7 @@
 #import "HBMessageSendView.h"
 #import "HBChatUserDetailViewController.h"
 #import "HBUserDetailViewController.h"
+#import "HBReportViewController.h"
 
 @interface HBChatController ()<UITableViewDelegate,UITableViewDataSource,HBMessageSendViewDelegate,DGChatTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -51,7 +52,7 @@
     [super viewWillAppear:animated];
     //关闭键盘事件响应
     [IQKeyboardManager sharedManager].enable = NO;
-
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -178,7 +179,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - action
+#pragma mark - action chatShowReport
 - (IBAction)returnAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -186,6 +187,54 @@
 - (IBAction)sendViewAction:(id)sender {
     [self.sendView.sendTextView becomeFirstResponder];
 }
+
+- (IBAction)reportAction:(id)sender {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self performSegueWithIdentifier:@"chatShowReport" sender:nil];
+
+    }];
+    [alertController addAction:action1];
+    
+    if (self.messages.lastObject.msgID) {
+        UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"清空记录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            
+            MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.label.text = @"正在删除...";
+            [SSHTTPSRequest deleteChatRecordWithUserID:[HBAccountInfo currentAccount].userID msgLastID:[self.messages.lastObject msgID] withSuccesd:^(id respondsObject) {
+    
+                [hud hideAnimated:YES];
+                
+                if (self.deleteSuccedBlock)self.deleteSuccedBlock();//删除成功回调
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            } withFail:^(NSError *error) {
+                hud.mode = MBProgressHUDModeFail;
+                hud.label.text = @"删除失败!";
+                [hud hideAnimated:YES afterDelay:1.0f];
+
+            }];
+            
+        }];
+        [alertController addAction:action2];
+    }
+
+    
+    
+    UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:action3];
+    
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -258,6 +307,12 @@
     
 }
 
+//点击用户头像
+- (void)dgTableView:(UITableView *)tableView selectHearImageViewWithIndexPath:(NSIndexPath *)indexPath{
+    HBChatMessageModel * model = self.messages[indexPath.row];
+    [self performSegueWithIdentifier:@"chatShowUserDetail" sender:model];
+}
+
 #pragma mark - HBMessageSendViewDelegate 发生消息
 - (void)deSelectSendAction:(HBMessageSendView *)messageView withContent:(NSString *)content{
     
@@ -276,8 +331,15 @@
     
     [SSHTTPSRequest sendPrivacyMsgWithUserID:[HBAccountInfo currentAccount].userID toUserID:self.msgLastModel.user.userID content:content messageType:DGMessageTypeText withSuccesd:^(id respondsObject) {
         
-        model.sendStatus = DGMessageSendStatusNone;
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        if ([respondsObject[@"code"] integerValue] == 200) {
+            model.sendStatus = DGMessageSendStatusNone;
+            model.msgID = respondsObject[@"privateMessage"][@"id"];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        }else{
+            model.sendStatus = DGMessageSendStatusFail;
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        }
+     
         
     } withFail:^(NSError *error) {
         model.sendStatus = DGMessageSendStatusFail;
@@ -294,7 +356,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"chatShowUserDetail"]){
         HBUserDetailViewController * vc = segue.destinationViewController;
-        vc.userInfo = self.msgLastModel.user;
+        HBChatMessageModel * model = sender;
+        vc.userInfo = model.fromUser;
+    }else if ([segue.identifier isEqualToString:@"chatShowReport"]){
+        HBReportViewController * vc = segue.destinationViewController;
+        vc.userModel = self.msgLastModel.user;
     }
 }
 

@@ -219,9 +219,11 @@
     CMTime cmtime = avasset.duration; //视频时间信息结构体
     Float64 durationSeconds = CMTimeGetSeconds(cmtime); //视频总秒数
     
-    if (durationSeconds < 10) {
+    int minTime = _isCharge? 20:10;
+    if (durationSeconds < minTime) {
         
-        UIAlertView * alertView =[[UIAlertView alloc] initWithTitle:@"提示" message:@"抱歉，视频时长不得少于10秒哦!" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        NSString * title = [NSString stringWithFormat:@"抱歉，视频时长不得少于%d秒哦!",minTime];
+        UIAlertView * alertView =[[UIAlertView alloc] initWithTitle:@"提示" message:title delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         
         [alertView show];
         

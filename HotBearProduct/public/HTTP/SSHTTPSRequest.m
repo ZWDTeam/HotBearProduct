@@ -541,10 +541,11 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
     }];
 }
 
+
 /*!
  * 举报
  */
-+ (void)reportWithUserID:(NSString *)userID content:(NSString *)cotent type:(NSNumber *)type commentID:(NSString *)commentID videoID:(NSString *)videoID withSuccesd:(Succesed)succesd withFail:(Fail)fail{
++ (void)reportWithUserID:(NSString *)userID content:(NSString *)cotent type:(NSNumber *)type commentID:(NSString *)commentID videoID:(NSString *)videoID toUserID:(NSString *)toUserID withSuccesd:(Succesed)succesd withFail:(Fail)fail{
     AFHTTPSessionManager * manager = hbHTTPSessionManager();
     
     NSMutableDictionary * dic = @{@"userId":userID? :@"0",
@@ -553,6 +554,7 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
     if (cotent.length != 0) dic[@"content"]= cotent;
     if (commentID) dic[@"commentId"] = commentID;
     if (videoID) dic[@"videoId"] = videoID;
+    if (toUserID) dic[@"toUserId"] = toUserID;
     
     NSString * url = [HB_SERVER_IP stringByAppendingPathComponent:@"/report/save"];
     
@@ -678,6 +680,7 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
  *
  */
 + (void)fetchAddVAuthInfoWithUserID:(NSString *)userID withSuccesd:(Succesed)succesd withFail:(Fail)fail{
+    
     AFHTTPSessionManager * manager = hbHTTPSessionManager();
     
     NSDictionary * dic = @{@"userId":userID? :@"0"};
@@ -805,6 +808,28 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
     NSString * url = [HB_SERVER_IP stringByAppendingPathComponent:@"privatemessage/getallmessage"];
     
     [manager GET:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        succesd(responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        fail(error);
+    }];
+}
+
+/*!
+ * 删除聊天记录
+ */
++ (void)deleteChatRecordWithUserID:(NSString *)userID msgLastID:(NSString *)msgLastID withSuccesd:(Succesed)succesd withFail:(Fail)fail{
+    
+    AFHTTPSessionManager * manager = hbHTTPSessionManager();
+    
+    NSDictionary * dic =@{@"userId":userID,
+                         @"id":msgLastID};
+    
+    NSString * url = [HB_SERVER_IP stringByAppendingPathComponent:@"/privatemessagelist/updatetab"];
+    
+    [manager POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         succesd(responseObject);
         

@@ -46,6 +46,9 @@ typedef NS_ENUM(NSInteger, SSTouchType) {//录制按钮形式
 
 @property (assign , nonatomic)NSTimeInterval recordTime;
 
+
+@property (assign , nonatomic)NSTimeInterval hb_record_min_time;//最小世间默认值
+
 @property (assign , nonatomic)NSTimeInterval maxTime;//最大录制时间
 
 @property (assign , nonatomic)NSTimeInterval minTime;//最小录制时间

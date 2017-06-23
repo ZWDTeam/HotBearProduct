@@ -75,7 +75,6 @@ NSString * const HBBadgeCountKey;
         case HBAnnotationTypePoint:
         {
             self.badgeLabel.layer.cornerRadius = 4.0f;
-            self.badgeLabel.hidden = NO;
             self.badgeLabel.textColor = self.badgeLabel.backgroundColor;
             
             [self.badgeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +89,6 @@ NSString * const HBBadgeCountKey;
         case HBAnnotationTypeNumber:
         {
             self.badgeLabel.layer.cornerRadius = 7.0f;
-            self.badgeLabel.hidden = NO;
             self.badgeLabel.textColor = [UIColor whiteColor];
 
             [self.badgeLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +121,6 @@ NSString * const HBBadgeCountKey;
 
     }else{
         self.badgeLabel.hidden = NO;
-
     }
 }
 

@@ -19,9 +19,15 @@
 
 @optional
 
+//点击聊天image
 - (void)dgTableView:(UITableView *)tableView selectedChatTableViewWithIndexPath:(NSIndexPath *)indexPath;
 
+//点击重发按钮
 - (void)dgTableView:(UITableView *)tableView selectFailWithIndexPath:(NSIndexPath *)indexPath;
+
+//点击用户头像
+- (void)dgTableView:(UITableView *)tableView selectHearImageViewWithIndexPath:(NSIndexPath *)indexPath;
+
 
 //点击文本中的链接时触发
 - (void)RCLabel:(id)RCLabel didSelectLinkWithURL:(NSString*)url;
@@ -30,7 +36,7 @@
 
 @interface DGChatTableViewCell : UITableViewCell
 
-- (id)initWithDelegate:(id)delegate reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithDelegate:(id<DGChatTableViewCellDelegate>)delegate reuseIdentifier:(NSString *)reuseIdentifier;
 
 
 //消息内容

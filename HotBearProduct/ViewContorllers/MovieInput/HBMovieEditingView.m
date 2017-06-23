@@ -30,6 +30,7 @@
         
         self.touchInputView.delegate = delegate;
         
+        
         self.delegate = delegate;
     }
     

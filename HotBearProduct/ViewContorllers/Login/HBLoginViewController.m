@@ -191,7 +191,7 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
 
     
     //测试帐号
-    if ([self.telphoneTextField.text isEqualToString:@"13317310421"] || [self.telphoneTextField.text isEqualToString:@"13320290780"]) {
+    if ([self.telphoneTextField.text isEqualToString:@"13317310421"] || [self.telphoneTextField.text isEqualToString:@"15574873872"]) {
         HUD.mode = MBProgressHUDModeIndeterminate;
         HUD.label.text =@"正在登录...";
         
@@ -235,8 +235,6 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
 
         }
     }];
-    
-
 }
 
 
@@ -380,11 +378,7 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
 - (IBAction)weiChatLoginAction:(id)sender {
     
     if ([WXApi isWXAppInstalled]) {
-        _HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        _HUD.mode = MBProgressHUDModeIndeterminate;
-        _HUD.label.text = @"正在登录...";
 
-        
         SendAuthReq *req = [[SendAuthReq alloc] init];
         req.scope = @"snsapi_userinfo";
         req.state = @"App";
@@ -404,19 +398,12 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
     NSString * originalImage  = dic[@"headimgurl"];
     NSString * gender = [dic[@"sex"] integerValue] == 1 ? @"男":@"女";
     
-
     [self loginOpenID:openID withLoginType:HBOtherLoginTypeWeChat nickName:nickname sex:gender smallHeaderPath:nil originalHeaderPath:originalImage age:nil introductoin:nil];
 }
 
 - (void)weChatUserInfofailNotification:(NSNotification *)notification{
     NSDictionary * dic = notification.userInfo;
     NSLog(@"%@",dic);
-    
-    _HUD.mode = MBProgressHUDModeFail;
-    _HUD.label.text = @"微信授权失败!";
-    [_HUD hideAnimated:YES afterDelay:2.0f];
-    
-    
 }
 
 - (void)setupAlertController {
@@ -430,14 +417,6 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
 #pragma mark - 新浪微博注册
 //新浪微博登录
 - (IBAction)shareLoginAction:(id)sender {
-    
-
-
-    
-    _HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    _HUD.mode = MBProgressHUDModeIndeterminate;
-    _HUD.label.text = @"正在登录...";
-
     
     //微博授权
     WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
@@ -478,8 +457,10 @@ NSString * const HBLoginSucceedNotificationKey = @"HBLoginSucceedNotificationKey
 
 #pragma mark - 第三方登录 服务器统一注册
 - (void)loginOpenID:(NSString *)openID withLoginType:(HBOtherLoginType)loginType nickName:(NSString *)nickname sex:(NSString *)sex smallHeaderPath:(NSString *)smallHeaderPath originalHeaderPath:(NSString *)originalHeaderPath age:(NSNumber *)age introductoin:(NSString *)introductoin {
-    
 
+    _HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    _HUD.mode = MBProgressHUDModeIndeterminate;
+    _HUD.label.text = @"正在登录...";
     
     [SSHTTPSRequest loginOpenID:openID withLoginType:loginType nickName:nickname sex:sex smallHeaderPath:smallHeaderPath originalHeaderPath:originalHeaderPath age:nil introductoin:introductoin withSuccesd:^(id respondsObject) {
         

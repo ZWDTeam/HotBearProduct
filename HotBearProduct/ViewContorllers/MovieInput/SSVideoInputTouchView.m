@@ -19,7 +19,6 @@
 
 @property (strong , nonatomic)UILabel * timeLabel;//
 
-@property (assign , nonatomic)NSTimeInterval hb_record_min_time;
 
 
 @end
@@ -33,7 +32,9 @@
 
     self.maxTime = 60*4;//视频最长时间
     
-    self.minTime = _hb_record_min_time;
+    self.hb_record_min_time = 10.0f;
+    
+    self.minTime = self.hb_record_min_time;
     
     self.backgroundColor = [UIColor clearColor];
     
@@ -60,13 +61,9 @@
     return _timeLabel;
 }
 
-
-- (NSTimeInterval)hb_record_min_time{
-    if (_hb_record_min_time == 0) {
-        return 10;
-    }
-    
-    return _hb_record_min_time;
+- (void)setHb_record_min_time:(NSTimeInterval)hb_record_min_time{
+    _hb_record_min_time = hb_record_min_time;
+    self.minTime = hb_record_min_time;
 }
 
 - (void)layoutSubviews{
@@ -172,7 +169,8 @@
         self.recording = NO;
 
         if (!self.ableSave) {
-            UIAlertView * alertView =[[UIAlertView alloc] initWithTitle:@"提示" message:@"录制时长最少10秒,点击'确认'继续录制" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+            NSString * title = [NSString stringWithFormat:@"抱歉，视频时长不得少于%d秒哦!",(int)_hb_record_min_time];
+            UIAlertView * alertView =[[UIAlertView alloc] initWithTitle:@"提示" message:title delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
             [alertView show];
             
             [self.delegate pauseTouchWithInputTouchView:self];

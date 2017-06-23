@@ -36,9 +36,9 @@
 #import "SSHTTPUploadManager.h"
 #import "HBDocumentManager.h"
 
-#if 1
+#if 0
 
-#define HB_SERVER_IP @"http://172.18.1.160:8080/hotbear/"
+#define HB_SERVER_IP @"http://172.18.1.157:8080/hotbear/"
 
 #else
 
@@ -72,7 +72,7 @@
 
 //分享标题文字
 #define HBShareTitle @"分享自能赚钱的短视频社区"
-#define HBSHareDetailTitle @"宅男福利小视频，新交友约会神器"
+#define HBSHareDetailTitle @"看视频来约我，视频社交社区"
 
 //返回适应的比例尺寸大小
 #define HBSizeMake(w , h)  CGSizeMake(w , h*(HB_SCREEN_WIDTH/320))
