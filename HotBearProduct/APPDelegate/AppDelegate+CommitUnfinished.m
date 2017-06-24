@@ -34,11 +34,16 @@
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN:{
                 NSLog(@"3G");
+                
+                //更新位置信息
+                [self.locationManger startUpdatingLocation];
                 [self RechargeRecordUpload];//更新充值订单信息
             }
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi:{
                 NSLog(@"WIFI");
+                //更新位置信息
+                [self.locationManger startUpdatingLocation];
                 [self RechargeRecordUpload];//更新充值订单信息
             }
                 break;

@@ -214,11 +214,6 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
    
     if (longitude == 0 && latitude == 0) {//如果位置信息未加载出来,跳出不加载
         _waitLocationLoadFinished = YES;
-        
-        if (!appdelegate.locationOn) {//如果定位未打开直接加载推荐视频
-            [self fetchRecommendVideos];
-        }
-        return;
     }
     
 
