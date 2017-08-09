@@ -264,6 +264,9 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (HBPrefixIsDeveloperStatus == 1) {
+        return 0;
+    }
     return _videos.count;
 }
 
@@ -279,7 +282,6 @@
     
     cell.titleLabel.text = storyModel.videoIntroduction;
     cell.commentCountLabel.text = storyModel.showWatchCount;
-    cell.moneyCountLabel.text = @"234";//暂无
     cell.timeLabel.text = storyModel.videoPrice.intValue ?  [NSString stringWithFormat:@"%ld熊掌",(long)storyModel.videoPrice.integerValue]: @"免费";
     cell.timeLabel.hidden = storyModel.videoPrice.intValue ? NO:YES;
 

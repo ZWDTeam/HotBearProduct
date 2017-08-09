@@ -13,7 +13,6 @@ pod 'SDWebImage', '~> 4.0.0'
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/aliyun/aliyun-specs.git'
 pod 'AlicloudPush', '~> 1.9.1'
-pod 'AliyunOSSiOS'
 
 #开放平台
 pod 'WechatOpenSDK'

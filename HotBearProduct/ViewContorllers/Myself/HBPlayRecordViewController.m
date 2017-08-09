@@ -253,6 +253,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (HBPrefixIsDeveloperStatus == 1) {
+        return 0;
+    }
+    
     return self.playRecords.count;
 }
 

@@ -247,7 +247,7 @@
     AVAssetExportSession *exportSession= [[AVAssetExportSession alloc] initWithAsset:asset presetName:AVAssetExportPresetMediumQuality];
     exportSession.shouldOptimizeForNetworkUse = YES;
     exportSession.outputURL = [HBDocumentManager fetchVideoRandomPath];
-    exportSession.outputFileType = AVFileTypeMPEG4;
+    exportSession.outputFileType = AVFileTypeMPEG4;//输出格式
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         int exportStatus = exportSession.status;
         NSLog(@"%d",exportStatus);
@@ -342,7 +342,8 @@
         //音频采集compositionCommentaryTrack
         AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
         
-        [compositionAudioTrack insertTimeRange:audioTimeRange ofTrack:([audioAsset tracksWithMediaType:AVMediaTypeAudio].count > 0) ? [audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject : nil atTime:kCMTimeZero error:nil];
+        
+        [compositionAudioTrack insertTimeRange:audioTimeRange ofTrack: [audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
         
         //AVAssetExportSession用于合并文件，导出合并后文件，presetName文件的输出类型
         AVAssetExportSession *assetExportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetPassthrough];

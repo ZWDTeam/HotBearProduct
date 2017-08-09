@@ -396,8 +396,7 @@ AFHTTPSessionManager * hbHTTPSessionManager(){
 //修改个人资料
 + (void)updateMyselfInfoWithUserID:(NSString *)userID  sex:(NSString *)sex age:(NSString *)age introduction:(NSString *)introduction headerPath:(NSString *)headerPath nickName:(NSString *)nickName withSuccesd:(Succesed)succesd withFail:(Fail)fail{
     AFHTTPSessionManager * manager = hbHTTPSessionManager();
-    
-   
+        
     NSMutableDictionary * dic = @{}.mutableCopy;
     dic[@"id"] = userID;
     if (sex) dic[@"u_sex"] = sex;

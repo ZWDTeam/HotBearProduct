@@ -110,7 +110,7 @@ NSString * const HBPayAlertNotifacationKey = @"HBPayAlertNotifacationKey";
         _logoImageView.contentMode = UIViewContentModeScaleAspectFill;
         CGRect rect = CGRectMake(0, 0, 100, 35);
         _logoImageView.frame = rect;
-        [self addSubview:_logoImageView];
+        [self insertSubview:_logoImageView belowSubview:self.trySeeBottomView];
         [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(@(0));
             make.right.equalTo(@(-10));
@@ -142,6 +142,7 @@ NSString * const HBPayAlertNotifacationKey = @"HBPayAlertNotifacationKey";
     [self uploadUI];
     
     [self insertSubview:self.trySeeBottomView belowSubview:self.bottomView];
+    
 }
 
 

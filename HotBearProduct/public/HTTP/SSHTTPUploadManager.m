@@ -6,16 +6,6 @@
 //  Copyright © 2016年 迪哥哥. All rights reserved.
 //
 
-#if 1
-
-#define SSUploadURLString @"http://120.25.92.106/videoServer/phpCode/input_video.php"
-
-#else
-
-#define SSUploadURLString @"http://172.18.1.157:8080/FileUploadAndDownLoad/a.do"
-
-#endif
-
 
 
 /****OSS 信息表*****/
@@ -42,6 +32,8 @@
 #define OSSAccessKeySecret @"9UrcU1DfJzCiwrxHoMS5VAx6hETCMF"
 /******************/
 
+//蛋疼的IPV6 1 :测试环境  0 :生产环境 
+int HBPrefixIsDeveloperStatus = 1;
 
 
 #import "SSHTTPUploadManager.h"
@@ -285,6 +277,12 @@ AFHTTPSessionManager* AFManagerShare(){
         
     }else{
 
+        if (HBPrefixIsDeveloperStatus == 1) {//测试环境
+            urlString = [@"https://www.hotbearvideo.com/" stringByAppendingPathComponent:urlString];
+            return [NSURL URLWithString:urlString];
+        }
+        
+        
         //制定oss 图片样式
         urlString = [urlString stringByAppendingString:HB_IMAGE_STYLE];
         urlString = [HB_IMAGE_OSS_SERVER stringByAppendingPathComponent:urlString];
@@ -302,7 +300,12 @@ AFHTTPSessionManager* AFManagerShare(){
         return [NSURL URLWithString:urlString];
         
     }else{
-        urlString = [HB_IMAGE_OSS_SERVER stringByAppendingPathComponent:urlString];
+        if (HBPrefixIsDeveloperStatus == 1) {//测试环境
+            urlString = [@"https://www.hotbearvideo.com/" stringByAppendingPathComponent:urlString];
+        }else{
+            urlString = [HB_IMAGE_OSS_SERVER stringByAppendingPathComponent:urlString];
+        }
+        
         return [NSURL URLWithString:urlString];
     }
 }
@@ -325,12 +328,20 @@ AFHTTPSessionManager* AFManagerShare(){
         
         return [NSURL fileURLWithPath:videoObjectKey];
     }
+
     
-    // sign constrain url
+    if (HBPrefixIsDeveloperStatus == 1) {//测试环境
+        
+        NSString * urlString = [@"https://www.hotbearvideo.com/" stringByAppendingPathComponent:videoObjectKey];
+        return [NSURL URLWithString:urlString];
+        
+    }
+    
     OSSTask * task = [_client presignConstrainURLWithBucketName:HN_BUCKET_NAME
                                                  withObjectKey:videoObjectKey
                                         withExpirationInterval: 10 * 60];
     if (!task.error) {
+        
         
         NSURL * url = [NSURL URLWithString:task.result];
         return url;

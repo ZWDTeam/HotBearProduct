@@ -14,7 +14,7 @@
 #import "HBVideoInfo.h"
 #import "HBVideoStroysModel.h"
 
-
+extern int HBPrefixIsDeveloperStatus;
 #pragma mark  上传任务添加通知
 //新增上传任务通知
 extern NSString * const SSTHTTPUploadAddTaskItemKey;

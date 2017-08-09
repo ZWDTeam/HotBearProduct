@@ -129,6 +129,11 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    if (HBPrefixIsDeveloperStatus == 1) {
+        return 2;
+    }
+    
     return self.items.count;
 }
 

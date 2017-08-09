@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AliyunOSSiOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0447FB999E67DBB5D86E1FEE3079AFE4</key>
+		<key>1C7F33D43BF2B5C17F2A50849228B8D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C7F33D43BF2B5C17F2A50849228B8D5</key>
+		<key>1CB72CE19CCBDBF796D1866BF2ED4A44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D2F2FAF50A7242068CE1B8F0843C296</key>
+		<key>4E90F0DF082FE1EA81B0CCD17B130D2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9F85A41AEB2CCB56ACDA370DF8DDB444</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B9BB56485B4BCCD750D09F6F2C4E6364</key>
 		<dict>
 			<key>primary</key>
 			<true/>

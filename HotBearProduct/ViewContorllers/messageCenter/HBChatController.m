@@ -199,7 +199,7 @@
     [alertController addAction:action1];
     
     if (self.messages.lastObject.msgID) {
-        UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"清空记录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"清空记录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.mode = MBProgressHUDModeIndeterminate;
@@ -222,7 +222,18 @@
         [alertController addAction:action2];
     }
 
-    
+    UIAlertAction * action4 = [UIAlertAction actionWithTitle:@"屏蔽" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:window animated:YES];
+        hud.mode = MBProgressHUDModeSucceed;
+        hud.label.text = @"已屏蔽";
+        [hud hideAnimated:YES afterDelay:1.5];
+        if (self.deleteSuccedBlock)self.deleteSuccedBlock();//删除成功回调
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }];
+    [alertController addAction:action4];
+
     
     UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         

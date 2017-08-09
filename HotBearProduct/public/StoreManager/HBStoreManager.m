@@ -119,13 +119,7 @@
     
     SKProduct *p = nil;
     for (SKProduct *pro in product) {
-        NSLog(@"pro info");
-        NSLog(@"SKProduct 描述信息：%@", [pro description]);
-        NSLog(@"localizedTitle 产品标题：%@", [pro localizedTitle]);
-        NSLog(@"localizedDescription 产品描述信息：%@", [pro localizedDescription]);
-        NSLog(@"price 价格：%@", [pro price]);
-        NSLog(@"productIdentifier Product id：%@", [pro productIdentifier]);
-        
+
         if([pro.productIdentifier isEqualToString: self.currentProductID]){
             p = pro;
             NSString *  money = [NSString stringWithFormat:@"%@",[pro price]];

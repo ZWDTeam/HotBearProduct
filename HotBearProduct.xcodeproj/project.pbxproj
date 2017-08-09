@@ -12,6 +12,9 @@
 		C3C6EA581EE310E5001700C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6EA571EE310E5001700C6 /* main.m */; };
 		C3C6EA631EE310E5001700C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C6EA621EE310E5001700C6 /* Assets.xcassets */; };
 		C3D5C3061EE3B8260002D5E4 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D5C3051EE3B8260002D5E4 /* libGPUImage.a */; };
+		C3D7D6031F034B3800D8CDEA /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7D6021F034B3800D8CDEA /* AliyunOSSiOS.framework */; };
+		C3D7D6051F034B5700D8CDEA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7D6041F034B5700D8CDEA /* SystemConfiguration.framework */; };
+		C3D7D6071F034B6600D8CDEA /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7D6061F034B6600D8CDEA /* libresolv.tbd */; };
 		C3EE004F1EF5A19F00777B67 /* HBBaseSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EEFF231EF5A19F00777B67 /* HBBaseSheetView.m */; };
 		C3EE00501EF5A19F00777B67 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EEFF261EF5A19F00777B67 /* NSString+URL.m */; };
 		C3EE00511EF5A19F00777B67 /* UIView+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EEFF281EF5A19F00777B67 /* UIView+Badge.m */; };
@@ -530,6 +533,9 @@
 		C3D5C3031EE3B8260002D5E4 /* GPUImageXYDerivativeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageXYDerivativeFilter.h; sourceTree = "<group>"; };
 		C3D5C3041EE3B8260002D5E4 /* GPUImageZoomBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageZoomBlurFilter.h; sourceTree = "<group>"; };
 		C3D5C3051EE3B8260002D5E4 /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGPUImage.a; sourceTree = "<group>"; };
+		C3D7D6021F034B3800D8CDEA /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = "<group>"; };
+		C3D7D6041F034B5700D8CDEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3D7D6061F034B6600D8CDEA /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		C3EE00001EF5A19F00777B67 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
 		C3EE00011EF5A19F00777B67 /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
 		C3EE00021EF5A19F00777B67 /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
@@ -1051,7 +1057,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D7D6071F034B6600D8CDEA /* libresolv.tbd in Frameworks */,
+				C3D7D6051F034B5700D8CDEA /* SystemConfiguration.framework in Frameworks */,
 				C3D5C3061EE3B8260002D5E4 /* libGPUImage.a in Frameworks */,
+				C3D7D6031F034B3800D8CDEA /* AliyunOSSiOS.framework in Frameworks */,
 				8CD762886B2A03B0B195335E /* libPods-HotBearProduct.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1951,8 +1960,6 @@
 				C3EE02E11EF5A9F600777B67 /* model */,
 				C3EE02E01EF5A9F100777B67 /* view */,
 				C3EE02DF1EF5A9E800777B67 /* controller */,
-				C3EE01AD1EF5A5D400777B67 /* HBDownLoadRecordViewController.h */,
-				C3EE01AE1EF5A5D400777B67 /* HBDownLoadRecordViewController.m */,
 			);
 			name = playerRecord;
 			sourceTree = "<group>";
@@ -1960,6 +1967,8 @@
 		C3EE02DF1EF5A9E800777B67 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				C3EE01AD1EF5A5D400777B67 /* HBDownLoadRecordViewController.h */,
+				C3EE01AE1EF5A5D400777B67 /* HBDownLoadRecordViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -2425,6 +2434,9 @@
 		C8FC23D915C1E40C6E999125 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3D7D6061F034B6600D8CDEA /* libresolv.tbd */,
+				C3D7D6041F034B5700D8CDEA /* SystemConfiguration.framework */,
+				C3D7D6021F034B3800D8CDEA /* AliyunOSSiOS.framework */,
 				C3D5C2591EE3B8250002D5E4 /* GPUImage */,
 				53291E942B0D2EE8C1063A54 /* libPods-HotBearProduct.a */,
 			);
@@ -3013,6 +3025,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -3037,6 +3053,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -3103,6 +3123,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = NT7Q4GQP2P;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HotBearProduct/NeardyPrefixHeader.pch";
 				INFOPLIST_FILE = HotBearProduct/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

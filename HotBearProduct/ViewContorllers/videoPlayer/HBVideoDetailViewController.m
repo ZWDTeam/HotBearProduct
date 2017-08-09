@@ -132,7 +132,7 @@
         //设置列表头部视图
         self.tableViewHeaderView = [UIView new];
         self.tableViewHeaderView.frame =CGRectMake(0, 0, self.view.frame.size.width, 180*(self.view.frame.size.height/320));
-        self.tableViewHeaderView.backgroundColor = [UIColor blackColor];
+        self.tableViewHeaderView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
         
         self.tableView.tableHeaderView = self.tableViewHeaderView;
         
@@ -213,7 +213,6 @@
         videoPlayView.videoPayView.hidden = NO;
     }else{
         videoPlayView.url =  url;
-
     }
     
 
@@ -590,10 +589,10 @@
     }];
     [controller addAction:action];
     
-//    UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"拉黑" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//        [self blacklistAction];
-//    }];
-//    [controller addAction:action1];
+    UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"屏蔽" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self blacklistAction];
+    }];
+    [controller addAction:action1];
     
     UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -604,10 +603,10 @@
 }
 
 
-//确认拉黑处理
+//确认屏蔽处理
 - (void)blacklistAction{
     
-    UIAlertController * controller = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认拉黑？拉黑后你将无法看到此人发布的任何作品。并会立即退出当前播放界面！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认屏蔽？屏蔽后你将无法看到此人发布的任何作品。并会立即退出当前播放界面！" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction * action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         

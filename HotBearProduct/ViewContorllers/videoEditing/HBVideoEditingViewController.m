@@ -132,15 +132,47 @@
                                @"price": price,
                                @"account":[HBAccountInfo currentAccount].userID
                                };
-//        @"shareTypes":shareTypes
+
         
-        //添加上传任务
+        if (HBPrefixIsDeveloperStatus == 1) {
+            
+            [self testPushVideoInfo];
+        }else{
+            
+            //添加上传任务
             [[SSHTTPUploadManager shareManager] addUploadTaskWithVideoURL:url withFirstImage:self.tableViewHeaderView.centerImageView.image withUserInfo:dic withIdentifier:@"updataVideo"];
-        
-        
-        [self performSelector:@selector(dismissVC) withObject:nil afterDelay:0.1];
+            
+            
+            [self performSelector:@selector(dismissVC) withObject:nil afterDelay:0.1];
+        }
+
     }];
     
+}
+
+
+- (void)testPushVideoInfo{
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
+    hud.progress = 0.0;
+    hud.label.numberOfLines = 0;
+    hud.label.font = [UIFont systemFontOfSize:14];
+    hud.label.text = @"正在上传...";
+    
+    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"%f",hud.progress);
+        hud.progress += 0.02;
+        if (hud.progress >= 1) {
+            hud.label.text = @"上传成功，审核通过后会在APP内进行发布!";
+            hud.mode = MBProgressHUDModeSucceed;
+            [hud hideAnimated:YES afterDelay:2.0];
+            [timer invalidate];
+            [self performSelector:@selector(dismissVC) withObject:nil afterDelay:2.0];
+
+        }
+    }];
+    
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)dismissVC{

@@ -31,7 +31,7 @@
 
 
 @interface HBHomeViewController ()<UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,DGPullRefreshCollectionViewDelegate,HBHomeScrollNavigationBarDelegate,HBHomeBannerReusableViewDelegate,UICollectionViewDelegateFlowLayout>{
-
+    
 }
 
 @property (strong , nonatomic)NSMutableArray<DGPullRefreshCollectionView *>  * collectionViews;
@@ -43,7 +43,7 @@
 
 
 @property (strong , nonatomic)NSArray * banners;//活动推荐内容
-@property (strong , nonatomic)NSArray * recommendVideos;//推荐视频类容
+@property (strong , nonatomic)NSMutableArray * recommendVideos;//推荐视频类容
 
 
 //推广轮播
@@ -78,6 +78,15 @@
         [self addUploadNotification];
         
         
+        //用于测试环境的标示
+        [SSHTTPSRequest fecthVideoStroysWithUserID:@"1" type:@1 page:@1 pageSize:@1 orderArg:10 withSuccesd:^(id respondsObject) {
+            
+            //避免审核问题
+            HBPrefixIsDeveloperStatus = [respondsObject[@"tab"] intValue];
+
+        } withFail:^(NSError *error) {
+            HBPrefixIsDeveloperStatus = 1;
+        }];
     }
     
     return self;
@@ -305,8 +314,6 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         collcetionView.reachedTheEnd = NO;
         [collcetionView reloadData];
     }];
-
-    
 }
 
 
@@ -317,11 +324,15 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
     
     DGPullRefreshCollectionView * collectionView = self.collectionViews.firstObject;
     
-    [SSHTTPSRequest fecthVideoStroysWithUserID:[HBAccountInfo currentAccount].userID type:@1 page:@1 pageSize:@8 orderArg:_collationType withSuccesd:^(id respondsObject) {
+    [SSHTTPSRequest fecthVideoStroysWithUserID:[HBAccountInfo currentAccount].userID type:@1 page:@1 pageSize:@20 orderArg:_collationType withSuccesd:^(id respondsObject) {
+        
+        //避免审核问题
+        HBPrefixIsDeveloperStatus = [respondsObject[@"tab"] intValue];
+        
         HBVideoStroysModel * storysModel = [[HBVideoStroysModel alloc] initWithDictionary:respondsObject error:nil];
         
         if (storysModel.code == 200) {
-            self.recommendVideos = storysModel.videos;
+            self.recommendVideos = storysModel.videos.mutableCopy;
         }
         [collectionView reloadData];
         
@@ -348,7 +359,7 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
     if (section == 0) {
         return [self.allVideos[collectionView.tag] count];
     }else{
-        return self.recommendVideos.count;
+        return self.recommendVideos.count >8 ? 8:self.recommendVideos.count;
     }
 }
 
@@ -364,7 +375,11 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         
         
         NSURL *url =  [[SSHTTPUploadManager shareManager] imageURL:storyModel.imageBigPath];
-        [cell.videoImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"errorH"]];
+        [cell.videoImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"errorH"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (error && !image) {
+                cell.videoImageView.image = [UIImage imageNamed:@"loadError"];
+            }
+        }];
         
         NSURL * userUrl = [[SSHTTPUploadManager shareManager] imageURL:storyModel.userInfo.smallImageObjectKey];
         [cell.userheaderImageView sd_setImageWithURL:userUrl placeholderImage:[UIImage imageNamed:@"默认头像"]];
@@ -388,7 +403,12 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         HBHomeRecommendCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
         HBVideoStroyModel * storyModel = self.recommendVideos[indexPath.row];
         NSURL *url =  [[SSHTTPUploadManager shareManager] imageURL:storyModel.imageBigPath];
-        [cell.videoImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"errorH"]];
+        [cell.videoImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"errorH"] options:SDWebImageRetryFailed  completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (error && !image) {
+                cell.videoImageView.image = [UIImage imageNamed:@"loadError"];
+                NSLog(@"%@",imageURL);
+            }
+        }];
         
         return cell;
 
@@ -405,6 +425,7 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         [self performSegueWithIdentifier:@"showDetailView" sender:storyModel];
     }else{
         HBVideoStroyModel * storyModel = self.recommendVideos[indexPath.row];
+        NSLog(@"%@",storyModel);
         [self performSegueWithIdentifier:@"showDetailView" sender:storyModel];
     }
     
@@ -693,6 +714,15 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         //如果拉黑，立即清除此人所有内容
         detailVC.clearBlock = ^(HBVideoStroyModel *storyModel) {
             
+            //清除推荐视频中被屏蔽的内容
+            NSMutableArray * removeStorys = @[].mutableCopy;
+            for (HBVideoStroyModel * itemStoryModel in self.recommendVideos) {
+                if (itemStoryModel.userInfo.userID.integerValue == storyModel.userInfo.userID.integerValue) {
+                    [removeStorys addObject:itemStoryModel];
+                }
+            }
+            [self.recommendVideos removeObjectsInArray:removeStorys];
+            
             //清除数据
             for (int i = 0; i < self.allVideos.count ;i++) {
                 [self removeStoryUserID:storyModel.userInfo.userID withIndex:i];
@@ -726,6 +756,7 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
     
     [storysModels removeObjectsInArray:removeStroys];
     [collcetionView reloadData];
+    
     
 }
 
@@ -921,7 +952,6 @@ static BOOL _waitLocationLoadFinished = NO;//等待位置刷新完成
         delegate.waitShareVideoInfo = @{@"types":mutableTypes,
                                         @"storyModel":storyModel};
     }
-    
 }
 
 #pragma mark - 更新位置信息
